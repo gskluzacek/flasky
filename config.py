@@ -1,18 +1,25 @@
 import os
+import base64
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+# decode and return the base64 string if not None or the empty string else return the default value
+def base64_decode(base64_val, default_val):
+    ret_val = default_val
+    if base64_val:
+        ret_val = base64.b64decode(bytes(base64_val, "utf-8"))
+    return ret_val
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
+    SECRET_KEY = base64_decode(os.environ.get('SECRET_KEY'), 'hard to guess string')
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
-    FLASKY_MAIL_SENDER = 'Flasky Admin <flasky@example.com>'
+    FLASKY_MAIL_SENDER = 'Flask Admin <flask.amin@gmail.com>'
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
     FLASKY_POSTS_PER_PAGE = 20
     FLASKY_FOLLOWERS_PER_PAGE = 50

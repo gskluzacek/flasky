@@ -1482,6 +1482,12 @@ rest of the application.
 
 ### migration scripts
 
+### create migration script
+python hello.py db migrate -m "initial migration"
+
+### apply migration script
+python hello.py db upgrade
+
 Two functions: `upgrade()` - applies the database changes that are part of the migration. And 
 `downgrade()` -  removes them.
 
@@ -1522,7 +1528,7 @@ sample **execution** of the generated migration script:
     INFO  [alembic.migration] Running upgrade None -> 1bc594146bb5, initial migration
 
 For a first migration, this is effectively equivalent to calling db.create_all(), but in successive migrations the 
-upgrade command applies updates to the tables without af‐ fecting their contents.
+upgrade command applies updates to the tables without affecting their contents.
 
 # Flask-Mail
 
@@ -1561,8 +1567,8 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'flask.framework@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Sp00nB00k'
+app.config['MAIL_USERNAME'] = 'xxx@yyy.org'
+app.config['MAIL_PASSWORD'] = 'blahblahblah'
 ```
 
 see: https://www.lifewire.com/what-are-the-gmail-smtp-settings-1170854
