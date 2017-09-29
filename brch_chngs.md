@@ -162,7 +162,7 @@ encoded value.
 ```
 >>> import os
 >>> import base64
->>> print('export SECRET_KEY={0}'.format(base64.b64encode(os.urandom(24)).decode("utf-8")))
+>>> print("export SECRET_KEY='{0}'".format(base64.b64encode(os.urandom(24)).decode("utf-8")))
 export SECRET_KEY=''e9lxkIu67Hazyx4817rxtJnwNTaQVRau'
 ```
 
@@ -215,10 +215,72 @@ before running any scripts.
 
 
 
+# steps to deploy code to dreamhost
+
+1. change directory to the application directory: `cd ~/komiclogr-dev.komicbox.com`
+2. after initial standup testing the following files should be present in the applicaiton directory
+   1. .htaccess
+   2. prperties.sh
+   3. passenger_wsi.py
+   4. manage.py
+   5. set_path_for_python-3.6.sh
+3. edit the  `.htaccess` file adding/changin the necessary environment variables
+4. edit the `prperties.sh` file adding/changin the necessary environment variables
+5. clone the github repo: `git clone https://github.com/gskluzacek/flasky.git`
+6. the above clone command will create a folder called `flasky`, cd into that folder
+7. execute the following copy commands
+   1. `cp config.py manage.py ..`
+   2. `cp -r app migrations tests ..`
+8. cd back to the applicaton directory: `cd ..`
+9. source the modified `properties.sh` file
+10. execute: `./manage.py shell`
+    1. `for ck, cv in app.config.items():`
+    2. `print(ck, "\t", cv)`
+    3. review the config settings
+11. execute: `./manage.py db upgrade`
+12. execute: `./manage.py shell`
+    1. `Role.insert_roles()`
+    2. `Role.query.all()`
+13. create admin user
+    1. launch dev server: `./manage.py runserver -h komiclogr-dev.komicbox.com`
+    2. in a web browser go to: http://komiclogr-dev.komicbox.com:5000
+    3. click `login`
+    4. click `Click here to register`
+    5. enter the application admin email address as configured in th env var: `FLASKY_ADMIN`
+    6. enter username of `AdminUser`
+    7. enter password (2x)
+    8. get link from confirmation email & confirm account
+    9. login and post test message
+    10. logout
+14. enter `<CTRL-C>` to exit the dev server
+15. add some dummy data
+    1. `./manage.py shell`
+    2. `User.generate_fake(50)`
+    3. `Post.generate_fake(1000)`
+16. execute: `touch tmp/restart.txt`
+17. and continue to test, go to: http://komiclogr-dev.komicbox.com
+    
+    
+
+
+
 # changes
 most recent changes are listed first...
 
-## pending
+## Pending
+
+**28-SEP-2017: deploy code to fresh dreamhost install** 
+
+### changes
+* created `New_Dreamhost_Environment_Standup.md` with details on standing up a new Dreamhost environment
+* modified `config.py` changed logic to get additonal config values from environment variables
+* modified `properties.sh` added additonal environmental variables
+
+### open issues found during testing
+* confirmation email was not reciveved, but appreas, per the log, to have been sent.
+
+
+## e2cbe7b0bb2fcc5e4245015f6c49633ad85a14c2
 
 **28-SEP-2017: Config and DB set up for base application in DEV Enviroment** 
 
