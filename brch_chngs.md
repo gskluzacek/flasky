@@ -267,7 +267,14 @@ before running any scripts.
 # changes
 most recent changes are listed first...
 
-## Pending
+## pending
+
+**28-SEP-2017: resolve open testing issue** 
+
+in the previous commit `7ee6dc1b432d78bef4409a44663b583dc00f4aac` it was noted that the confirmaiton email had not 
+been received. This is incorrect. The email was delivered but was sent to the SPAM folder.
+
+## 7ee6dc1b432d78bef4409a44663b583dc00f4aac
 
 **28-SEP-2017: deploy code to fresh dreamhost install** 
 
