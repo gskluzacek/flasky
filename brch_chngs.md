@@ -145,6 +145,38 @@ _see the section: **Register the Initial System Admin Account** under the **Crea
 
 
 
+
+
+# Changing Database Backends
+
+This section details what was done to migrate from the Base App's SQLite database backend to a MySQL database
+backend.
+
+## Prepwork
+Before we can switch the application to use MySQL, we first have to
+* Install MySQL _(if an installation does not already exist)_
+* Create the MySQL userid that the application will use to access the database _(different than unix or application
+userid)
+* Creeat a new MySQL database _(if not using an existing database on the MySQL server)_
+
+## Code Changes
+_see the code changes made for the Pending commit_
+
+## Configuration Changes
+The following configuration changes are required
+* modified the properties.sh and .htaccess files to set the data base userid and passwords
+
+## Database Setup
+after the database was created on the MySQL server and the necessary config changes were made, executed the usual database setup steps
+* `./manage.py db upgrade`
+* `./manage.py shell` --> `Role.insert_roles()`
+* create admin user via web GUI
+* `./manage.py shell` --> `User.generate_fake(50)`; `Post.generate_fake(1000)`
+
+
+
+
+
 # Configuration Details
 
 ## Environment Variables
@@ -260,7 +292,73 @@ before running any scripts.
 16. execute: `touch tmp/restart.txt`
 17. and continue to test, go to: http://komiclogr-dev.komicbox.com
     
+   
+   
+   
+   
+   
     
+
+# Themes
+themes are listed with the current/active theme listed first followed by the most recently completed themes
+
+# Migrate Base App to MySQL Database
+
+The focus for this theame is to migrate the current SQLite database to a MySQL database and documenting what is 
+required to do so. The migration may require changes to the code and or configuration.
+
+# Get Base App up & running in the Hosted environment
+
+The focus for this theam was create a new Hosted Environment, perform and document the necessary tasks to stand it up
+and to take the branch created in the first theme (and changes made to it) and deploy it to the newly created hosted
+environment, making any additional changes necessary to get the base applicaiton up and running.
+
+One concern that came out of this theme is how to safely store and track changes to sensitive configuration data, 
+regardless if it is different across environments.
+
+## details
+* moved some configuration setting from being stored in config.py to being stored in environment variables
+* created files that are specific to the Dreamhost hosted environment: .htacess and passenger_wsgi.py. These files 
+are not under the version control system as they contain sensitive config information. 
+
+## notes
+* deplending on the platform used to serve the web applicatoin, different mechanism may be needed in each environment
+* for the Dreamhost hosted environment, Passenger, a Apache module, is used to serve WSGI applications. As such some
+additional components were reqired to be introduced which include:
+  * .htaccess file  - for: setting the python executable that Pasenger should use and for the setting of environmental 
+  variables used by used by config.py
+  * passenger_wsgi.py - a simple wrapper script that exports the Flash app object created in manage.py as `application`
+* Revisit how we are handling some of the configuration settings that are currently stored in environment variables. 
+should we create additional sub-classes and place the config setting there instead of storing them in environment 
+variables. Currently the setting are in the base class.
+
+## commits
+* 7ee6dc1b432d78bef4409a44663b583dc00f4aac
+* b2c678984a6a8a8e0673d39011db6b048343ed65
+
+
+# Get Base App up & running in DEV environment
+
+For this theme we cloned the Flasky github repo and created a new branch called: `comic_logger_mstr` from the tag: 
+`13b` - `Chapter 13: Comment moderation (13b)`.
+
+The focus was to make any needed configuration changes and create the database and populate the tables. Additionally,
+documentation was created detailing the process.
+
+## details
+* changes made to config.py
+* created properties.sh file to set environment variables read by config.py
+* introduced logic to read the SECRET_KEY config setting from a Base64 encoded value stored as an environment variable. 
+The variable was set using os.urandom() which returns a binary value that was saved as an ASCII string using Base64 
+encoding.
+
+## commits
+* fc38e6841178588dc6f555cf4366c265089fe65b
+* e2cbe7b0bb2fcc5e4245015f6c49633ad85a14c2
+
+
+
+
 
 
 
@@ -268,6 +366,26 @@ before running any scripts.
 most recent changes are listed first...
 
 ## pending
+
+**2017-09-30: Migrate Base App to MySQL Database**
+
+The following code changes were made to accomodate the database backend change
+* config.py 
+  * added `APP_DB_USER` & `APP_DB_PASSWORD` config settings to the base class, populated from environment variables
+  * split the `DevelopmentConfig` class into 2 separate classes: `DevLocalConfig` and `DevHostedConfig`
+  * added `APP_DB_HOST` & `APP_DB_DATABASE` config settings
+  * modified how the `SQLALCHEMY_DATABASE_URI` config setting value is derived - generates it from: `APP_DB_USER`, 
+  `APP_DB_PASSWORD`, `APP_DB_HOST` and `APP_DB_DATABASE`. Also changed the db-dialect to `mysql+pymysql`
+  * modified the keys for the `config` dictionary to split the developmntConfig class into separate classes. old key
+  was `deveopment` new keys are: `dev-local` and `dev-hosted`. Also set the value for the `default` config to the 
+  `DevLocalConfig` class
+* properties.sh / .htaccess
+  * added the `APP_DB_USER` & `APP_DB_PASSWORD` environment variables
+  * modified the value of the `FLASK_CONFIG` envirnment variable to account for the spliting of the development config
+  class into 2 separate config classes.
+
+
+## b2c678984a6a8a8e0673d39011db6b048343ed65
 
 **28-SEP-2017: resolve open testing issue** 
 
@@ -344,3 +462,18 @@ branch instead of having multiple intermediate migrations scripts.
 * added this file
 * added Notes.md -- the notes I've taken while reading _Flask Web Development_
 * updated .gitignore
+
+
+
+
+
+
+# Backlog
+
+## Themes
+* create new db models
+* add new application functionality that uses new models including navigation 
+* strip out base functionality and navigation 
+
+## Features
+* To Be Determined...
