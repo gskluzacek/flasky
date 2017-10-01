@@ -233,16 +233,22 @@ before running any scripts.
 
 
 ### Variables
-| page | variable     | desc / notes |
-|------|--------------|--------------|
+| ..........page.......... | .................variable................ | desc / notes |
+|:------------------------:|:-----------------------------------------:|--------------|
 | 81 | FLASK_CONFIG | specifies the configuration class to use. Valid values: `development`, `testing`, `production`. If the envrionment variable is not set, then the named `default` config class of ` DevelopmentConfig` will be used |
 | 38, 45, 104 | SECRET_KEY   | used as a general-purpose encryption key by Flask and several third-party extensions. from the python shell `import os` and then call `os.urandom(24)`, cut and paste the generated value. Used to sign client-side session cookies. Used by Itsdangerous `TimedJSONWebSignatureSerializer()` token generator for JSON Web Signatures| 
-| 69, 77 | MAIL_USERNAME | Mail account userid for sending system emails|
-| 69, 77 | MAIL_PASSWORD | Mail account password for sending system emails |
+| 69, 77 | MAIL_USERNAME | SMTP (outbound) Mail account userid for sending system emails|
+| 69, 77 | MAIL_PASSWORD | SMTP (outbound) Mail account password for sending system emails |
 | 76, 114, 216, 217 | FLASKY_ADMIN | The application's primary admin's email addres. When a user with this registers, it will autmatically be given the `ADMIN` role. System emails will be sent to this email address.|
-| 77 | DEV_DATABASE_URL | dev database - uses default value or configure |
-| 77 | TEST_DATABASE_URL | test database - uses default value or configure |
-| 77 | DATABASE_URL | prodcution database - uses default value or configure |
+| 69, 77, 217 | MAIL_PORT (*) | Port of the email server (25 for TLS disabled, 587 for TLS enabled) |
+| 69, 77, 217 | MAIL_USE_TLS (*) | Enable Transport Layer Security (TLS) security (default flase?) |
+| 77, 217 | MAIL_SERVER (*) | The hostname for the SMTP (outbound) mail server  |
+| 73, 76, 2117 | FLASKY_MAIL_SENDER (*) | the sender of application emails which will appear in the sent email as the reply-to, though there should be a note in all emails that this email account is not monitored. |
+| 77 | DEV_DATABASE_URL | **DEPRECATED** _see APP_DB_USER and APP_DB_PASSORD_ - dev database - uses default value or configure |
+| 77 | TEST_DATABASE_URL | **DEPRECATED** _see APP_DB_USER and APP_DB_PASSORD_ - test database - uses default value or configure |
+| 77 | DATABASE_URL | **DEPRECATED** _see APP_DB_USER and APP_DB_PASSORD_ - prodcution database - uses default value or configure |
+| _new_ | APP_DB_USER | the userid used to connect to the database server |
+| _new_ | APP_DB_PASSWORD | the userid used to connect to the database server |
 
 
 
@@ -302,10 +308,38 @@ before running any scripts.
 # Themes
 themes are listed with the current/active theme listed first followed by the most recently completed themes
 
+# Create Db Models for the Komic-Logr Functionality
+The focus for this theme is to begin adding functionality required for the Komic-Logr application, starting with
+the data model. There should be some screen which displays some mocked up data from the new data models along with
+basic navigation to get to the screen. 
+
+## details
+
+## commits
+
+
+
+
 # Migrate Base App to MySQL Database
 
 The focus for this theame is to migrate the current SQLite database to a MySQL database and documenting what is 
-required to do so. The migration may require changes to the code and or configuration.
+required to do so. The migration required changes to the code and configuration.
+
+## details
+
+* refactored the code for that sets the `SQLALCHEMY_DATABASE_URI` config setting.
+* the setting was broken into components: 
+  * `APP_DB_USER` and `APP_DB_PASSWORD` which are set from environment variables within the confing base class
+  * `APP_DB_HOST` abd `APP_DB_DATABASE` which are set within the derived config sub-classes
+  * additionally changed the db-dialect from `sqlite:///` to `mysql+pymysql://`
+* refactored the `DevelopmentConfig` derived sub-class into 2 different sub-classes 1) local development 
+and 2) hosted development
+* added the new environment variables to the properties.sh and .htaccess files  
+
+## commits
+
+* c623fc0a45fbfba91bc640fb0e6fc8e2d38f3ab1
+
 
 # Get Base App up & running in the Hosted environment
 
@@ -367,6 +401,35 @@ most recent changes are listed first...
 
 ## pending
 
+**2017-10-01: Create new data models for Komic Logr app**
+
+* added: `File` data model
+  * `load_file()` static class method that reads the input file (passed as a parameter) loads the `files` and `lines`
+  table and returns an instance of the `File` class. 
+    * For each line in the file it creates an instance of the `Line` class and adds it to the `File` instance's 
+    `lines` list.
+    * Was able to simplified the call to the `Line` constructor. (a `__init__()` method was added to the `Line`
+     class).
+    * After the file is read, the purchase date, store and transaction number are taken from the first `Line` 
+    and are set on `File`
+  * `generate_invoice()` & `generate_html_invoice()` instance methods for generating invoice output.
+* added `Line` data model
+  * `__init__()` method implemented to simplify the creation of `Line` instances _from the caller's perspective_
+    * This allowed the removal of `or None`, truncating vachar values that were too long and performing calculations 
+    for various field values when reading of the input values from the file 
+    * added a new parameter for `default_disc_rate` - used to calc `purch_price`
+    * pulled in the calculation of `pruch_price`, `cvr_dt_year`, `cvr_dt_month` and `cvr_dt_day`. Previously, these 
+    were set after the lines records were commit to db. 
+    * calls the `__init__()` of the `Line` class's bases class, passing the values from the `**kwargs` parameter
+    via the `get()` method. This allowed us to take in the additonal parameter for `default_disc_rate` as a
+    required positional parameter
+  * static methods for parsing date values, parsing price values and calculating the purchase price 
+* created: `invoice_template.html` for the generation of the output html invoice FILE
+* created: `style.css` to style the invoice html
+* manage.py: added the 2 new models: `File` & `Line` to the make_shell_context() funciton
+
+## c623fc0a45fbfba91bc640fb0e6fc8e2d38f3ab1
+
 **2017-09-30: Migrate Base App to MySQL Database**
 
 The following code changes were made to accomodate the database backend change
@@ -381,7 +444,7 @@ The following code changes were made to accomodate the database backend change
   `DevLocalConfig` class
 * properties.sh / .htaccess
   * added the `APP_DB_USER` & `APP_DB_PASSWORD` environment variables
-  * modified the value of the `FLASK_CONFIG` envirnment variable to account for the spliting of the development config
+  * modified the value of the `FLASK_CONFIG` environment variable to account for the spliting of the development config
   class into 2 separate config classes.
 
 
@@ -471,7 +534,6 @@ branch instead of having multiple intermediate migrations scripts.
 # Backlog
 
 ## Themes
-* create new db models
 * add new application functionality that uses new models including navigation 
 * strip out base functionality and navigation 
 
