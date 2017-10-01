@@ -316,7 +316,7 @@ basic navigation to get to the screen.
 ## details
 
 ## commits
-
+* f1a1c0876545e276ac463045218473bac9b56f37
 
 
 
@@ -400,6 +400,46 @@ encoding.
 most recent changes are listed first...
 
 ## pending
+
+**2017-10-01: Fix for `explicit_defaults_for_timestamp` MySQL Server Config setting**
+
+### Issue Description
+An issue was found on the Dreamhost MySQL server where 
+1) `TIMESTAMP NOT NULL` columns were not being created with the 
+`DEFAULT CURRENT_TIMESTAMP` and `on update CURRENT_TIMESTAMP` DDL; and 
+2) INSERT statments that were including
+`TIMESTAMP NOT NULL` columns in the list of columns being inserted with an explicit value of `NULL` being set, were
+failing. 
+
+The root cause was that on the Dreamhost MySQL server, the `explicit_defaults_for_timestamp` was set to 1 but on
+the local MySQL server, the `explicit_defaults_for_timestamp` was set to 0.
+
+From the MySQL Documentation:
+
+> If explicit_defaults_for_timestamp is disabled, the server enables the nonstandard behaviors...
+
+The non-standard behavior being, if a `TIMESTAMP NOT NULL` column is explicitly set to `NULL` MySQL will default
+the value to the `CURRENT_TIMESTAMP`.
+
+see: https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp
+
+### Issue Resolution
+The fix was to explicitly set the `default` and `onupdate` parameters when defining the `TIMESTAMP` column 
+on the data model.
+
+```
+crt_dt = db.Column(db.TIMESTAMP, nullable=False, default=db.func.now(), onupdate=db.func.now())
+``` 
+
+_for addtional details see the: **New_Dreamhost_Environment_Standup.md** document, in the 'IMPORTANT ISSUES' section 
+under the 'Create MySQL Database' section._
+
+### other
+Also added the `SQLALCHEMY_ECHO` config setting to the Development config sub-classes and Set the value to False.
+Setting the falue to True will echo the SQL being generated. This is useful for debugging.
+
+
+## f1a1c0876545e276ac463045218473bac9b56f37
 
 **2017-10-01: Create new data models for Komic Logr app**
 

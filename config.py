@@ -36,6 +36,7 @@ class DevLocalConfig(Config):
     DEBUG = True
     APP_DB_HOST = 'localhost'
     APP_DB_DATABASE ='komic_logr'
+    SQLALCHEMY_ECHO=False
     SQLALCHEMY_DATABASE_URI ='mysql+pymysql://{user}:{password}@{host}/{db}'.format(
         user=Config.APP_DB_USER, password=Config.APP_DB_PASSWORD, host=APP_DB_HOST, db=APP_DB_DATABASE
     )
@@ -45,6 +46,7 @@ class DevHostedConfig(Config):
     DEBUG = True
     APP_DB_HOST = 'mysql.komiclogr-dev.komicbox.com'
     APP_DB_DATABASE ='komiclogr_dev'
+    SQLALCHEMY_ECHO=False
     SQLALCHEMY_DATABASE_URI ='mysql+pymysql://{user}:{password}@{host}/{db}'.format(
         user=Config.APP_DB_USER, password=Config.APP_DB_PASSWORD, host=APP_DB_HOST, db=APP_DB_DATABASE
     )

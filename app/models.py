@@ -30,10 +30,10 @@ class File(db.Model):
     __tablename__ = 'files'
 
     file_id            = db.Column(db.Integer,       primary_key=True)
-    crt_dt             = db.Column(db.TIMESTAMP,     nullable=False)
-    status             = db.Column(db.String(  25),    nullable=False, default='UPLOADED')
-    file_path          = db.Column(db.String(  500),   nullable=False)
-    orig_file          = db.Column(db.String(  100),   nullable=False)
+    crt_dt             = db.Column(db.TIMESTAMP,     nullable=False, default=db.func.now(), onupdate=db.func.now())
+    status             = db.Column(db.String(  25),  nullable=False, default='UPLOADED')
+    file_path          = db.Column(db.String(  500), nullable=False)
+    orig_file          = db.Column(db.String(  100), nullable=False)
     purch_dt           = db.Column(db.Date)
     store              = db.Column(db.String(  100))
     trans_num          = db.Column(db.String(   40))

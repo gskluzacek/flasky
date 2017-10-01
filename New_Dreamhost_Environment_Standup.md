@@ -173,6 +173,110 @@ pip list
 
 # Create a MySQL database
 
+## **IMPORTANT ISSUES**
+
+### differences between local and hosted mysql behaviour was found
+
+when creating a table with a column of the `TIMESTAMP` type with not-null set to true, _it appears that_ the 
+local MySQL server automatically adds a default value of `CURRENT_TIMESTAMP` and `on update CURRENT_TIMESTAMP`
+
+Howerver the hosted MySQL server does not _seem_ to have the same behavior. Short term fix is to alter the column:
+
+`ALTER TABLE files CHANGE crt_dt TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;` 
+
+**BUT,** there also appears to be a difference in the treatment of how the 2 instances handle columns that are
+explicitly set to NULL
+
+on the local MySQL server (version 5.7.15) this executes fine and will use the `CURRENT_TIMESTAMP` for the value
+of the create date, despite it being explicitly set to `NULL`. The same insert statement on the DreamHost MySQL
+server throws an error: `1048, "Column 'crt_dt' cannot be null"`
+
+`insert into files (crt_dt, status, file_path, orig_file, default_discount) values(null, 'ok','blah','bogo',0.20);`  
+
+apprently, there is a server setting called: `explicit_defaults_for_timestamp`. From the MySQL 5.6.x documentation
+it defaults 0 (disabled). In the local MySQL instance it is disabled, but when I check the Dreamhost instance it
+is set to 1 (enabled). The setting couldn't not be updated from the command line: 
+`#1238 - Variable 'explicit_defaults_for_timestamp' is a read only variable`  
+
+```
+$ select @@explicit_defaults_for_timestamp;
+>>> 1
+$ insert into files (status, file_path, orig_file, default_discount) values('ok','blah','bogo',0.20);
+>>> OK
+$ insert into files (crt_dt, status, file_path, orig_file, default_discount) values(null, 'ok','blah','bogo',0.20);
+>>> Error, crt_dt cannot be NULL
+$ set explicit_defaults_for_timestamp 0;
+$ insert into files (status, file_path, orig_file, default_discount) values('ok','blah','bogo',0.20);
+>>> OK
+$ insert into files (crt_dt, status, file_path, orig_file, default_discount) values(null, 'ok','blah','bogo',0.20);
+>>> OK
+```
+
+the SQL emitted by SQL Alchemy does include the `crt_dt` column and it does set it to `NULL`
+
+```
+sqlalchemy.exc.IntegrityError: (pymysql.err.IntegrityError) (1048, "Column 'crt_dt' cannot be null")
+
+[SQL: 'INSERT INTO files (crt_dt, status, file_path, orig_file, purch_dt, store, trans_num, default_discount, 
+      tax_rate, pmt_meth, trans_total, sub_total, tax_total, discount_total, nei_trans_total, nei_sub_total, 
+      nei_tax_total, nei_discount_total, notes) 
+    VALUES (%(crt_dt)s, %(status)s, %(file_path)s, %(orig_file)s, %(purch_dt)s, %(store)s, %(trans_num)s, 
+      %(default_discount)s, %(tax_rate)s, %(pmt_meth)s, %(trans_total)s, %(sub_total)s, %(tax_total)s, 
+      %(discount_total)s, %(nei_trans_total)s, %(nei_sub_total)s, %(nei_tax_total)s, %(nei_discount_total)s, 
+      %(notes)s)'
+] [parameters: {'crt_dt': None, 'status': 'UPLOADED', 'file_path': 'input/invoice_mc_2017_05_21_A.txt', 
+      'orig_file': 'test1.txt', 'purch_dt': datetime.date(2017, 5, 21), 'store': 'Modern Age Comics', 
+      'trans_num': '0', 'default_discount': Decimal('0.20'), 'tax_rate': Decimal('0.07'), 
+      'pmt_meth': 'Chase Visa Freedom', 'trans_total': None, 'sub_total': None, 'tax_total': None, 
+      'discount_total': None, 'nei_trans_total': None, 'nei_sub_total': None, 'nei_tax_total': None, 
+      'nei_discount_total': None, 'notes': None}
+]
+
+```
+
+The long term work around may be to use `default=func.now()` on the column definition and possibly 
+`onupdate=func.now()`
+
+**UPDATE:**
+
+Tested with the above work around and it has fixed the issue... 
+
+Additonally the alter table statement mentioned above is not needed as default values are now specified for
+both insert and update. 
+
+the new SQL emitted:
+
+```
+2017-10-01 12:14:26,502 INFO sqlalchemy.engine.base.Engine 
+  INSERT INTO files (
+    crt_dt, status, file_path, orig_file, purch_dt, store, trans_num, default_discount, tax_rate, 
+    pmt_meth, trans_total, sub_total, tax_total, discount_total, nei_trans_total, nei_sub_total, 
+    nei_tax_total, nei_discount_total, notes
+  ) VALUES (
+    now(), %(status)s, %(file_path)s, %(orig_file)s, %(purch_dt)s, %(store)s, %(trans_num)s, 
+    %(default_discount)s, %(tax_rate)s, %(pmt_meth)s, %(trans_total)s, %(sub_total)s, %(tax_total)s, 
+    %(discount_total)s, %(nei_trans_total)s, %(nei_sub_total)s, %(nei_tax_total)s, %(nei_discount_total)s, 
+    %(notes)s
+  )
+2017-10-01 12:14:26,502 INFO sqlalchemy.engine.base.Engine 
+{
+  'status': 'UPLOADED', 'file_path': 'input/invoice_mc_2017_05_21_A.txt', 'orig_file': 'fix_test.txt', 
+  'purch_dt': datetime.date(2017, 5, 21), 'store': 'Modern Age Comics', 'trans_num': '0', 
+  'default_discount': Decimal('0.20'), 'tax_rate': Decimal('0.0675'), 'pmt_meth': 'AmEx', 
+  'trans_total': None, 'sub_total': None, 'tax_total': None, 'discount_total': None, 
+  'nei_trans_total': None, 'nei_sub_total': None, 'nei_tax_total': None, 'nei_discount_total': None, 
+  'notes': None
+}
+```
+
+
+**SEE:**
+* http://docs.sqlalchemy.org/en/rel_1_1/dialects/mysql.html#timestamp-columns-and-null
+* http://docs.sqlalchemy.org/en/latest/core/defaults.html#sql-expressions
+* https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp
+
+## steps...
+
 first create a hostname if one does not already exist
 
 1. log into the dreamhost web hosting control panel: https://panel.dreamhost.com
