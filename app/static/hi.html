@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Komic Logr - Edit Sales Receipt Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Flasky</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="/auth/login">Log In</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="file-lines-content">
+            <p>purchase date: 2017-05-21</p>
+            <p>store: Modern Age Comics</p>
+            <p>trans num:: 15908</p>
+
+            <form action="" method="post" class="form-inline" role="form">
+
+                <input id="csrf_token" name="csrf_token" type="hidden" value="IjUzNDJlMTllNDYzOWUxYWE3ZWIxY2Q2MTk4ZDc3M2NkMWVlYzRmNjUi.DLz1mA.Xg9AjxINV0ygudKbUyjDjX7effc">
+
+                <input id="lines-0-line_id" name="lines-0-line_id" type="hidden" value="185">
+                <input id="lines-0-file_id" name="lines-0-file_id" type="hidden" value="12">
+                <input id="lines-0-seq" name="lines-0-seq" type="hidden" value="1">
+                <input id="lines-0-ser_id" name="lines-0-ser_id" type="hidden" value="0">
+                <input id="lines-0-publisher" name="lines-0-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-0-series" name="lines-0-series" type="hidden" value="All-New X-Men, Vol. 2">
+                <input id="lines-0-issue" name="lines-0-issue" type="hidden" value="issue">
+                <input id="lines-0-iss_full" name="lines-0-iss_full" type="hidden" value="19">
+                <input id="lines-0-iss_num" name="lines-0-iss_num" type="hidden" value="19">
+                <input id="lines-0-iss_ext" name="lines-0-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-0-edition" name="lines-0-edition" type="hidden" value="eddition">
+                <input id="lines-0-cvr_dt" name="lines-0-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-0-cvr_dt_year" name="lines-0-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-0-cvr_dt_month" name="lines-0-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-0-cvr_dt_day" name="lines-0-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-0-cover_price" name="lines-0-cover_price" type="hidden" value="3.99">
+                <input id="lines-0-owner" name="lines-0-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-0-purch_dt" name="lines-0-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-0-store" name="lines-0-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-0-trans_num" name="lines-0-trans_num" type="hidden" value="0">
+                <input id="lines-0-release_dt" name="lines-0-release_dt" type="hidden" value="2017-03-29">
+                <input id="lines-0-crossover" name="lines-0-crossover" type="hidden" value="crossover">
+                <input id="lines-0-story_arc" name="lines-0-story_arc" type="hidden" value="story-arc">
+                <input id="lines-0-title" name="lines-0-title" type="hidden" value="title">
+                <input id="lines-0-sub_title" name="lines-0-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-0-desc" name="lines-0-desc" style="width: 350px;" type="text" value="[1] All-New X-Men, Vol. 2 #19 May 2017 $3.99">
+
+                <input class="form-control" id="lines-0-str_seq" name="lines-0-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-0-str_cvr_price" name="lines-0-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-0-str_item_disc" name="lines-0-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-0-str_disc_price" name="lines-0-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-0-taxable_ind" name="lines-0-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-0-str_item_tax" name="lines-0-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-0-str_tax_adj" name="lines-0-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-0-str_tax_paid" name="lines-0-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-0-purch_price" name="lines-0-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-1-line_id" name="lines-1-line_id" type="hidden" value="186">
+                <input id="lines-1-file_id" name="lines-1-file_id" type="hidden" value="12">
+                <input id="lines-1-seq" name="lines-1-seq" type="hidden" value="2">
+                <input id="lines-1-ser_id" name="lines-1-ser_id" type="hidden" value="0">
+                <input id="lines-1-publisher" name="lines-1-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-1-series" name="lines-1-series" type="hidden" value="The Amazing Spider-Man, Vol. 4">
+                <input id="lines-1-issue" name="lines-1-issue" type="hidden" value="issue">
+                <input id="lines-1-iss_full" name="lines-1-iss_full" type="hidden" value="25-A">
+                <input id="lines-1-iss_num" name="lines-1-iss_num" type="hidden" value="25">
+                <input id="lines-1-iss_ext" name="lines-1-iss_ext" type="hidden" value="A">
+                <input id="lines-1-edition" name="lines-1-edition" type="hidden" value="Regular Alex Ross Cover">
+                <input id="lines-1-cvr_dt" name="lines-1-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-1-cvr_dt_year" name="lines-1-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-1-cvr_dt_month" name="lines-1-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-1-cvr_dt_day" name="lines-1-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-1-cover_price" name="lines-1-cover_price" type="hidden" value="9.99">
+                <input id="lines-1-owner" name="lines-1-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-1-purch_dt" name="lines-1-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-1-store" name="lines-1-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-1-trans_num" name="lines-1-trans_num" type="hidden" value="0">
+                <input id="lines-1-release_dt" name="lines-1-release_dt" type="hidden" value="2017-03-15">
+                <input id="lines-1-crossover" name="lines-1-crossover" type="hidden" value="crossover">
+                <input id="lines-1-story_arc" name="lines-1-story_arc" type="hidden" value="The Osborn Identity">
+                <input id="lines-1-title" name="lines-1-title" type="hidden" value="Part One: Bug Hunt / Police &amp; Thieves / Spider-Man Tsum-Up! / $ $ Pay Up / Mutts Ado About Nothing /">
+                <input id="lines-1-sub_title" name="lines-1-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-1-desc" name="lines-1-desc" style="width: 350px;" type="text" value="[2] The Amazing Spider-Man, Vol. 4 #25-A May 2017 $9.99">
+
+                <input class="form-control" id="lines-1-str_seq" name="lines-1-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-1-str_cvr_price" name="lines-1-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-1-str_item_disc" name="lines-1-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-1-str_disc_price" name="lines-1-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-1-taxable_ind" name="lines-1-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-1-str_item_tax" name="lines-1-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-1-str_tax_adj" name="lines-1-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-1-str_tax_paid" name="lines-1-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-1-purch_price" name="lines-1-purch_price" style="width: 50px;" type="text" value="7.99">
+
+                <input id="lines-2-line_id" name="lines-2-line_id" type="hidden" value="187">
+                <input id="lines-2-file_id" name="lines-2-file_id" type="hidden" value="12">
+                <input id="lines-2-seq" name="lines-2-seq" type="hidden" value="3">
+                <input id="lines-2-ser_id" name="lines-2-ser_id" type="hidden" value="0">
+                <input id="lines-2-publisher" name="lines-2-publisher" type="hidden" value="DC Comics">
+                <input id="lines-2-series" name="lines-2-series" type="hidden" value="Clean Room">
+                <input id="lines-2-issue" name="lines-2-issue" type="hidden" value="issue">
+                <input id="lines-2-iss_full" name="lines-2-iss_full" type="hidden" value="17">
+                <input id="lines-2-iss_num" name="lines-2-iss_num" type="hidden" value="17">
+                <input id="lines-2-iss_ext" name="lines-2-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-2-edition" name="lines-2-edition" type="hidden" value="eddition">
+                <input id="lines-2-cvr_dt" name="lines-2-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-2-cvr_dt_year" name="lines-2-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-2-cvr_dt_month" name="lines-2-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-2-cvr_dt_day" name="lines-2-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-2-cover_price" name="lines-2-cover_price" type="hidden" value="3.99">
+                <input id="lines-2-owner" name="lines-2-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-2-purch_dt" name="lines-2-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-2-store" name="lines-2-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-2-trans_num" name="lines-2-trans_num" type="hidden" value="0">
+                <input id="lines-2-release_dt" name="lines-2-release_dt" type="hidden" value="2017-03-29">
+                <input id="lines-2-crossover" name="lines-2-crossover" type="hidden" value="crossover">
+                <input id="lines-2-story_arc" name="lines-2-story_arc" type="hidden" value="story-arc">
+                <input id="lines-2-title" name="lines-2-title" type="hidden" value="Waiting For The Stars To Fall">
+                <input id="lines-2-sub_title" name="lines-2-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-2-desc" name="lines-2-desc" style="width: 350px;" type="text" value="[3] Clean Room #17 May 2017 $3.99">
+
+                <input class="form-control" id="lines-2-str_seq" name="lines-2-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-2-str_cvr_price" name="lines-2-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-2-str_item_disc" name="lines-2-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-2-str_disc_price" name="lines-2-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-2-taxable_ind" name="lines-2-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-2-str_item_tax" name="lines-2-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-2-str_tax_adj" name="lines-2-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-2-str_tax_paid" name="lines-2-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-2-purch_price" name="lines-2-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-3-line_id" name="lines-3-line_id" type="hidden" value="188">
+                <input id="lines-3-file_id" name="lines-3-file_id" type="hidden" value="12">
+                <input id="lines-3-seq" name="lines-3-seq" type="hidden" value="4">
+                <input id="lines-3-ser_id" name="lines-3-ser_id" type="hidden" value="0">
+                <input id="lines-3-publisher" name="lines-3-publisher" type="hidden" value="DC Comics">
+                <input id="lines-3-series" name="lines-3-series" type="hidden" value="Clean Room">
+                <input id="lines-3-issue" name="lines-3-issue" type="hidden" value="issue">
+                <input id="lines-3-iss_full" name="lines-3-iss_full" type="hidden" value="18">
+                <input id="lines-3-iss_num" name="lines-3-iss_num" type="hidden" value="18">
+                <input id="lines-3-iss_ext" name="lines-3-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-3-edition" name="lines-3-edition" type="hidden" value="eddition">
+                <input id="lines-3-cvr_dt" name="lines-3-cvr_dt" type="hidden" value="June 2017">
+                <input id="lines-3-cvr_dt_year" name="lines-3-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-3-cvr_dt_month" name="lines-3-cvr_dt_month" type="hidden" value="6">
+                <input id="lines-3-cvr_dt_day" name="lines-3-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-3-cover_price" name="lines-3-cover_price" type="hidden" value="3.99">
+                <input id="lines-3-owner" name="lines-3-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-3-purch_dt" name="lines-3-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-3-store" name="lines-3-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-3-trans_num" name="lines-3-trans_num" type="hidden" value="0">
+                <input id="lines-3-release_dt" name="lines-3-release_dt" type="hidden" value="2017-04-26">
+                <input id="lines-3-crossover" name="lines-3-crossover" type="hidden" value="crossover">
+                <input id="lines-3-story_arc" name="lines-3-story_arc" type="hidden" value="story-arc">
+                <input id="lines-3-title" name="lines-3-title" type="hidden" value="A Bridge To Nowhere">
+                <input id="lines-3-sub_title" name="lines-3-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-3-desc" name="lines-3-desc" style="width: 350px;" type="text" value="[4] Clean Room #18 June 2017 $3.99">
+
+                <input class="form-control" id="lines-3-str_seq" name="lines-3-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-3-str_cvr_price" name="lines-3-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-3-str_item_disc" name="lines-3-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-3-str_disc_price" name="lines-3-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-3-taxable_ind" name="lines-3-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-3-str_item_tax" name="lines-3-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-3-str_tax_adj" name="lines-3-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-3-str_tax_paid" name="lines-3-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-3-purch_price" name="lines-3-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-4-line_id" name="lines-4-line_id" type="hidden" value="189">
+                <input id="lines-4-file_id" name="lines-4-file_id" type="hidden" value="12">
+                <input id="lines-4-seq" name="lines-4-seq" type="hidden" value="5">
+                <input id="lines-4-ser_id" name="lines-4-ser_id" type="hidden" value="0">
+                <input id="lines-4-publisher" name="lines-4-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-4-series" name="lines-4-series" type="hidden" value="Daredevil, Vol. 5">
+                <input id="lines-4-issue" name="lines-4-issue" type="hidden" value="issue">
+                <input id="lines-4-iss_full" name="lines-4-iss_full" type="hidden" value="18">
+                <input id="lines-4-iss_num" name="lines-4-iss_num" type="hidden" value="18">
+                <input id="lines-4-iss_ext" name="lines-4-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-4-edition" name="lines-4-edition" type="hidden" value="eddition">
+                <input id="lines-4-cvr_dt" name="lines-4-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-4-cvr_dt_year" name="lines-4-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-4-cvr_dt_month" name="lines-4-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-4-cvr_dt_day" name="lines-4-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-4-cover_price" name="lines-4-cover_price" type="hidden" value="3.99">
+                <input id="lines-4-owner" name="lines-4-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-4-purch_dt" name="lines-4-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-4-store" name="lines-4-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-4-trans_num" name="lines-4-trans_num" type="hidden" value="0">
+                <input id="lines-4-release_dt" name="lines-4-release_dt" type="hidden" value="2017-03-15">
+                <input id="lines-4-crossover" name="lines-4-crossover" type="hidden" value="Running With the Devil">
+                <input id="lines-4-story_arc" name="lines-4-story_arc" type="hidden" value="Purple">
+                <input id="lines-4-title" name="lines-4-title" type="hidden" value="Part 2">
+                <input id="lines-4-sub_title" name="lines-4-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-4-desc" name="lines-4-desc" style="width: 350px;" type="text" value="[5] Daredevil, Vol. 5 #18 May 2017 $3.99">
+
+                <input class="form-control" id="lines-4-str_seq" name="lines-4-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-4-str_cvr_price" name="lines-4-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-4-str_item_disc" name="lines-4-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-4-str_disc_price" name="lines-4-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-4-taxable_ind" name="lines-4-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-4-str_item_tax" name="lines-4-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-4-str_tax_adj" name="lines-4-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-4-str_tax_paid" name="lines-4-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-4-purch_price" name="lines-4-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-5-line_id" name="lines-5-line_id" type="hidden" value="190">
+                <input id="lines-5-file_id" name="lines-5-file_id" type="hidden" value="12">
+                <input id="lines-5-seq" name="lines-5-seq" type="hidden" value="6">
+                <input id="lines-5-ser_id" name="lines-5-ser_id" type="hidden" value="0">
+                <input id="lines-5-publisher" name="lines-5-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-5-series" name="lines-5-series" type="hidden" value="Daredevil, Vol. 5">
+                <input id="lines-5-issue" name="lines-5-issue" type="hidden" value="issue">
+                <input id="lines-5-iss_full" name="lines-5-iss_full" type="hidden" value="19-B">
+                <input id="lines-5-iss_num" name="lines-5-iss_num" type="hidden" value="19">
+                <input id="lines-5-iss_ext" name="lines-5-iss_ext" type="hidden" value="B">
+                <input id="lines-5-edition" name="lines-5-edition" type="hidden" value="Variant Dan Mora Resurrxion Cover">
+                <input id="lines-5-cvr_dt" name="lines-5-cvr_dt" type="hidden" value="June 2017">
+                <input id="lines-5-cvr_dt_year" name="lines-5-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-5-cvr_dt_month" name="lines-5-cvr_dt_month" type="hidden" value="6">
+                <input id="lines-5-cvr_dt_day" name="lines-5-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-5-cover_price" name="lines-5-cover_price" type="hidden" value="3.99">
+                <input id="lines-5-owner" name="lines-5-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-5-purch_dt" name="lines-5-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-5-store" name="lines-5-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-5-trans_num" name="lines-5-trans_num" type="hidden" value="0">
+                <input id="lines-5-release_dt" name="lines-5-release_dt" type="hidden" value="2017-04-19">
+                <input id="lines-5-crossover" name="lines-5-crossover" type="hidden" value="crossover">
+                <input id="lines-5-story_arc" name="lines-5-story_arc" type="hidden" value="story-arc">
+                <input id="lines-5-title" name="lines-5-title" type="hidden" value="title">
+                <input id="lines-5-sub_title" name="lines-5-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-5-desc" name="lines-5-desc" style="width: 350px;" type="text" value="[6] Daredevil, Vol. 5 #19-B June 2017 $3.99">
+
+                <input class="form-control" id="lines-5-str_seq" name="lines-5-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-5-str_cvr_price" name="lines-5-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-5-str_item_disc" name="lines-5-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-5-str_disc_price" name="lines-5-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-5-taxable_ind" name="lines-5-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-5-str_item_tax" name="lines-5-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-5-str_tax_adj" name="lines-5-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-5-str_tax_paid" name="lines-5-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-5-purch_price" name="lines-5-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-6-line_id" name="lines-6-line_id" type="hidden" value="191">
+                <input id="lines-6-file_id" name="lines-6-file_id" type="hidden" value="12">
+                <input id="lines-6-seq" name="lines-6-seq" type="hidden" value="7">
+                <input id="lines-6-ser_id" name="lines-6-ser_id" type="hidden" value="0">
+                <input id="lines-6-publisher" name="lines-6-publisher" type="hidden" value="Image Comics">
+                <input id="lines-6-series" name="lines-6-series" type="hidden" value="Descender">
+                <input id="lines-6-issue" name="lines-6-issue" type="hidden" value="issue">
+                <input id="lines-6-iss_full" name="lines-6-iss_full" type="hidden" value="20">
+                <input id="lines-6-iss_num" name="lines-6-iss_num" type="hidden" value="20">
+                <input id="lines-6-iss_ext" name="lines-6-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-6-edition" name="lines-6-edition" type="hidden" value="eddition">
+                <input id="lines-6-cvr_dt" name="lines-6-cvr_dt" type="hidden" value="March 2017">
+                <input id="lines-6-cvr_dt_year" name="lines-6-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-6-cvr_dt_month" name="lines-6-cvr_dt_month" type="hidden" value="3">
+                <input id="lines-6-cvr_dt_day" name="lines-6-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-6-cover_price" name="lines-6-cover_price" type="hidden" value="3.99">
+                <input id="lines-6-owner" name="lines-6-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-6-purch_dt" name="lines-6-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-6-store" name="lines-6-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-6-trans_num" name="lines-6-trans_num" type="hidden" value="0">
+                <input id="lines-6-release_dt" name="lines-6-release_dt" type="hidden" value="2017-03-22">
+                <input id="lines-6-crossover" name="lines-6-crossover" type="hidden" value="crossover">
+                <input id="lines-6-story_arc" name="lines-6-story_arc" type="hidden" value="Orbital Mechanics">
+                <input id="lines-6-title" name="lines-6-title" type="hidden" value="Part Four">
+                <input id="lines-6-sub_title" name="lines-6-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-6-desc" name="lines-6-desc" style="width: 350px;" type="text" value="[7] Descender #20 March 2017 $3.99">
+
+                <input class="form-control" id="lines-6-str_seq" name="lines-6-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-6-str_cvr_price" name="lines-6-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-6-str_item_disc" name="lines-6-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-6-str_disc_price" name="lines-6-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-6-taxable_ind" name="lines-6-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-6-str_item_tax" name="lines-6-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-6-str_tax_adj" name="lines-6-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-6-str_tax_paid" name="lines-6-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-6-purch_price" name="lines-6-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-7-line_id" name="lines-7-line_id" type="hidden" value="192">
+                <input id="lines-7-file_id" name="lines-7-file_id" type="hidden" value="12">
+                <input id="lines-7-seq" name="lines-7-seq" type="hidden" value="8">
+                <input id="lines-7-ser_id" name="lines-7-ser_id" type="hidden" value="0">
+                <input id="lines-7-publisher" name="lines-7-publisher" type="hidden" value="Image Comics">
+                <input id="lines-7-series" name="lines-7-series" type="hidden" value="Descender">
+                <input id="lines-7-issue" name="lines-7-issue" type="hidden" value="issue">
+                <input id="lines-7-iss_full" name="lines-7-iss_full" type="hidden" value="21">
+                <input id="lines-7-iss_num" name="lines-7-iss_num" type="hidden" value="21">
+                <input id="lines-7-iss_ext" name="lines-7-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-7-edition" name="lines-7-edition" type="hidden" value="eddition">
+                <input id="lines-7-cvr_dt" name="lines-7-cvr_dt" type="hidden" value="April 2017">
+                <input id="lines-7-cvr_dt_year" name="lines-7-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-7-cvr_dt_month" name="lines-7-cvr_dt_month" type="hidden" value="4">
+                <input id="lines-7-cvr_dt_day" name="lines-7-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-7-cover_price" name="lines-7-cover_price" type="hidden" value="3.99">
+                <input id="lines-7-owner" name="lines-7-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-7-purch_dt" name="lines-7-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-7-store" name="lines-7-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-7-trans_num" name="lines-7-trans_num" type="hidden" value="0">
+                <input id="lines-7-release_dt" name="lines-7-release_dt" type="hidden" value="2017-04-19">
+                <input id="lines-7-crossover" name="lines-7-crossover" type="hidden" value="crossover">
+                <input id="lines-7-story_arc" name="lines-7-story_arc" type="hidden" value="Orbital Mechanics">
+                <input id="lines-7-title" name="lines-7-title" type="hidden" value="Part Five">
+                <input id="lines-7-sub_title" name="lines-7-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-7-desc" name="lines-7-desc" style="width: 350px;" type="text" value="[8] Descender #21 April 2017 $3.99">
+
+                <input class="form-control" id="lines-7-str_seq" name="lines-7-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-7-str_cvr_price" name="lines-7-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-7-str_item_disc" name="lines-7-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-7-str_disc_price" name="lines-7-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-7-taxable_ind" name="lines-7-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-7-str_item_tax" name="lines-7-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-7-str_tax_adj" name="lines-7-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-7-str_tax_paid" name="lines-7-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-7-purch_price" name="lines-7-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-8-line_id" name="lines-8-line_id" type="hidden" value="193">
+                <input id="lines-8-file_id" name="lines-8-file_id" type="hidden" value="12">
+                <input id="lines-8-seq" name="lines-8-seq" type="hidden" value="9">
+                <input id="lines-8-ser_id" name="lines-8-ser_id" type="hidden" value="0">
+                <input id="lines-8-publisher" name="lines-8-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-8-series" name="lines-8-series" type="hidden" value="Doctor Strange and the Sorcerers Supreme">
+                <input id="lines-8-issue" name="lines-8-issue" type="hidden" value="issue">
+                <input id="lines-8-iss_full" name="lines-8-iss_full" type="hidden" value="6">
+                <input id="lines-8-iss_num" name="lines-8-iss_num" type="hidden" value="6">
+                <input id="lines-8-iss_ext" name="lines-8-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-8-edition" name="lines-8-edition" type="hidden" value="eddition">
+                <input id="lines-8-cvr_dt" name="lines-8-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-8-cvr_dt_year" name="lines-8-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-8-cvr_dt_month" name="lines-8-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-8-cvr_dt_day" name="lines-8-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-8-cover_price" name="lines-8-cover_price" type="hidden" value="3.99">
+                <input id="lines-8-owner" name="lines-8-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-8-purch_dt" name="lines-8-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-8-store" name="lines-8-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-8-trans_num" name="lines-8-trans_num" type="hidden" value="0">
+                <input id="lines-8-release_dt" name="lines-8-release_dt" type="hidden" value="2017-03-08">
+                <input id="lines-8-crossover" name="lines-8-crossover" type="hidden" value="crossover">
+                <input id="lines-8-story_arc" name="lines-8-story_arc" type="hidden" value="Time After Time">
+                <input id="lines-8-title" name="lines-8-title" type="hidden" value="Part One">
+                <input id="lines-8-sub_title" name="lines-8-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-8-desc" name="lines-8-desc" style="width: 350px;" type="text" value="[9] Doctor Strange and the Sorcerers Supreme #6 May 2017 $3.99">
+
+                <input class="form-control" id="lines-8-str_seq" name="lines-8-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-8-str_cvr_price" name="lines-8-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-8-str_item_disc" name="lines-8-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-8-str_disc_price" name="lines-8-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-8-taxable_ind" name="lines-8-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-8-str_item_tax" name="lines-8-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-8-str_tax_adj" name="lines-8-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-8-str_tax_paid" name="lines-8-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-8-purch_price" name="lines-8-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-9-line_id" name="lines-9-line_id" type="hidden" value="194">
+                <input id="lines-9-file_id" name="lines-9-file_id" type="hidden" value="12">
+                <input id="lines-9-seq" name="lines-9-seq" type="hidden" value="10">
+                <input id="lines-9-ser_id" name="lines-9-ser_id" type="hidden" value="0">
+                <input id="lines-9-publisher" name="lines-9-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-9-series" name="lines-9-series" type="hidden" value="Doctor Strange and the Sorcerers Supreme">
+                <input id="lines-9-issue" name="lines-9-issue" type="hidden" value="issue">
+                <input id="lines-9-iss_full" name="lines-9-iss_full" type="hidden" value="7">
+                <input id="lines-9-iss_num" name="lines-9-iss_num" type="hidden" value="7">
+                <input id="lines-9-iss_ext" name="lines-9-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-9-edition" name="lines-9-edition" type="hidden" value="eddition">
+                <input id="lines-9-cvr_dt" name="lines-9-cvr_dt" type="hidden" value="June 2017">
+                <input id="lines-9-cvr_dt_year" name="lines-9-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-9-cvr_dt_month" name="lines-9-cvr_dt_month" type="hidden" value="6">
+                <input id="lines-9-cvr_dt_day" name="lines-9-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-9-cover_price" name="lines-9-cover_price" type="hidden" value="3.99">
+                <input id="lines-9-owner" name="lines-9-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-9-purch_dt" name="lines-9-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-9-store" name="lines-9-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-9-trans_num" name="lines-9-trans_num" type="hidden" value="0">
+                <input id="lines-9-release_dt" name="lines-9-release_dt" type="hidden" value="2017-04-12">
+                <input id="lines-9-crossover" name="lines-9-crossover" type="hidden" value="crossover">
+                <input id="lines-9-story_arc" name="lines-9-story_arc" type="hidden" value="Time After Time">
+                <input id="lines-9-title" name="lines-9-title" type="hidden" value="Part Two">
+                <input id="lines-9-sub_title" name="lines-9-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-9-desc" name="lines-9-desc" style="width: 350px;" type="text" value="[10] Doctor Strange and the Sorcerers Supreme #7 June 2017 $3.99">
+
+                <input class="form-control" id="lines-9-str_seq" name="lines-9-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-9-str_cvr_price" name="lines-9-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-9-str_item_disc" name="lines-9-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-9-str_disc_price" name="lines-9-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-9-taxable_ind" name="lines-9-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-9-str_item_tax" name="lines-9-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-9-str_tax_adj" name="lines-9-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-9-str_tax_paid" name="lines-9-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-9-purch_price" name="lines-9-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-10-line_id" name="lines-10-line_id" type="hidden" value="195">
+                <input id="lines-10-file_id" name="lines-10-file_id" type="hidden" value="12">
+                <input id="lines-10-seq" name="lines-10-seq" type="hidden" value="11">
+                <input id="lines-10-ser_id" name="lines-10-ser_id" type="hidden" value="0">
+                <input id="lines-10-publisher" name="lines-10-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-10-series" name="lines-10-series" type="hidden" value="Doctor Strange, Vol. 4">
+                <input id="lines-10-issue" name="lines-10-issue" type="hidden" value="issue">
+                <input id="lines-10-iss_full" name="lines-10-iss_full" type="hidden" value="18-B">
+                <input id="lines-10-iss_num" name="lines-10-iss_num" type="hidden" value="18">
+                <input id="lines-10-iss_ext" name="lines-10-iss_ext" type="hidden" value="B">
+                <input id="lines-10-edition" name="lines-10-edition" type="hidden" value="Variant Tess Fowler Venomized Cover">
+                <input id="lines-10-cvr_dt" name="lines-10-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-10-cvr_dt_year" name="lines-10-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-10-cvr_dt_month" name="lines-10-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-10-cvr_dt_day" name="lines-10-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-10-cover_price" name="lines-10-cover_price" type="hidden" value="3.99">
+                <input id="lines-10-owner" name="lines-10-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-10-purch_dt" name="lines-10-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-10-store" name="lines-10-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-10-trans_num" name="lines-10-trans_num" type="hidden" value="0">
+                <input id="lines-10-release_dt" name="lines-10-release_dt" type="hidden" value="2017-03-01">
+                <input id="lines-10-crossover" name="lines-10-crossover" type="hidden" value="crossover">
+                <input id="lines-10-story_arc" name="lines-10-story_arc" type="hidden" value="story-arc">
+                <input id="lines-10-title" name="lines-10-title" type="hidden" value="title">
+                <input id="lines-10-sub_title" name="lines-10-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-10-desc" name="lines-10-desc" style="width: 350px;" type="text" value="[11] Doctor Strange, Vol. 4 #18-B May 2017 $3.99">
+
+                <input class="form-control" id="lines-10-str_seq" name="lines-10-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-10-str_cvr_price" name="lines-10-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-10-str_item_disc" name="lines-10-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-10-str_disc_price" name="lines-10-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-10-taxable_ind" name="lines-10-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-10-str_item_tax" name="lines-10-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-10-str_tax_adj" name="lines-10-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-10-str_tax_paid" name="lines-10-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-10-purch_price" name="lines-10-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-11-line_id" name="lines-11-line_id" type="hidden" value="196">
+                <input id="lines-11-file_id" name="lines-11-file_id" type="hidden" value="12">
+                <input id="lines-11-seq" name="lines-11-seq" type="hidden" value="12">
+                <input id="lines-11-ser_id" name="lines-11-ser_id" type="hidden" value="0">
+                <input id="lines-11-publisher" name="lines-11-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-11-series" name="lines-11-series" type="hidden" value="Doctor Strange, Vol. 4">
+                <input id="lines-11-issue" name="lines-11-issue" type="hidden" value="issue">
+                <input id="lines-11-iss_full" name="lines-11-iss_full" type="hidden" value="19-B">
+                <input id="lines-11-iss_num" name="lines-11-iss_num" type="hidden" value="19">
+                <input id="lines-11-iss_ext" name="lines-11-iss_ext" type="hidden" value="B">
+                <input id="lines-11-edition" name="lines-11-edition" type="hidden" value="Variant Carlo Barberi Resurrxion Cover">
+                <input id="lines-11-cvr_dt" name="lines-11-cvr_dt" type="hidden" value="June 2017">
+                <input id="lines-11-cvr_dt_year" name="lines-11-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-11-cvr_dt_month" name="lines-11-cvr_dt_month" type="hidden" value="6">
+                <input id="lines-11-cvr_dt_day" name="lines-11-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-11-cover_price" name="lines-11-cover_price" type="hidden" value="3.99">
+                <input id="lines-11-owner" name="lines-11-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-11-purch_dt" name="lines-11-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-11-store" name="lines-11-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-11-trans_num" name="lines-11-trans_num" type="hidden" value="0">
+                <input id="lines-11-release_dt" name="lines-11-release_dt" type="hidden" value="2017-04-19">
+                <input id="lines-11-crossover" name="lines-11-crossover" type="hidden" value="crossover">
+                <input id="lines-11-story_arc" name="lines-11-story_arc" type="hidden" value="story-arc">
+                <input id="lines-11-title" name="lines-11-title" type="hidden" value="title">
+                <input id="lines-11-sub_title" name="lines-11-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-11-desc" name="lines-11-desc" style="width: 350px;" type="text" value="[12] Doctor Strange, Vol. 4 #19-B June 2017 $3.99">
+
+                <input class="form-control" id="lines-11-str_seq" name="lines-11-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-11-str_cvr_price" name="lines-11-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-11-str_item_disc" name="lines-11-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-11-str_disc_price" name="lines-11-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-11-taxable_ind" name="lines-11-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-11-str_item_tax" name="lines-11-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-11-str_tax_adj" name="lines-11-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-11-str_tax_paid" name="lines-11-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-11-purch_price" name="lines-11-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-12-line_id" name="lines-12-line_id" type="hidden" value="197">
+                <input id="lines-12-file_id" name="lines-12-file_id" type="hidden" value="12">
+                <input id="lines-12-seq" name="lines-12-seq" type="hidden" value="13">
+                <input id="lines-12-ser_id" name="lines-12-ser_id" type="hidden" value="0">
+                <input id="lines-12-publisher" name="lines-12-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-12-series" name="lines-12-series" type="hidden" value="Extraordinary X-Men, Vol. 1">
+                <input id="lines-12-issue" name="lines-12-issue" type="hidden" value="issue">
+                <input id="lines-12-iss_full" name="lines-12-iss_full" type="hidden" value="20">
+                <input id="lines-12-iss_num" name="lines-12-iss_num" type="hidden" value="20">
+                <input id="lines-12-iss_ext" name="lines-12-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-12-edition" name="lines-12-edition" type="hidden" value="eddition">
+                <input id="lines-12-cvr_dt" name="lines-12-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-12-cvr_dt_year" name="lines-12-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-12-cvr_dt_month" name="lines-12-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-12-cvr_dt_day" name="lines-12-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-12-cover_price" name="lines-12-cover_price" type="hidden" value="3.99">
+                <input id="lines-12-owner" name="lines-12-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-12-purch_dt" name="lines-12-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-12-store" name="lines-12-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-12-trans_num" name="lines-12-trans_num" type="hidden" value="0">
+                <input id="lines-12-release_dt" name="lines-12-release_dt" type="hidden" value="2017-03-22">
+                <input id="lines-12-crossover" name="lines-12-crossover" type="hidden" value="crossover">
+                <input id="lines-12-story_arc" name="lines-12-story_arc" type="hidden" value="story-arc">
+                <input id="lines-12-title" name="lines-12-title" type="hidden" value="title">
+                <input id="lines-12-sub_title" name="lines-12-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-12-desc" name="lines-12-desc" style="width: 350px;" type="text" value="[13] Extraordinary X-Men, Vol. 1 #20 May 2017 $3.99">
+
+                <input class="form-control" id="lines-12-str_seq" name="lines-12-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-12-str_cvr_price" name="lines-12-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-12-str_item_disc" name="lines-12-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-12-str_disc_price" name="lines-12-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-12-taxable_ind" name="lines-12-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-12-str_item_tax" name="lines-12-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-12-str_tax_adj" name="lines-12-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-12-str_tax_paid" name="lines-12-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-12-purch_price" name="lines-12-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-13-line_id" name="lines-13-line_id" type="hidden" value="198">
+                <input id="lines-13-file_id" name="lines-13-file_id" type="hidden" value="12">
+                <input id="lines-13-seq" name="lines-13-seq" type="hidden" value="14">
+                <input id="lines-13-ser_id" name="lines-13-ser_id" type="hidden" value="0">
+                <input id="lines-13-publisher" name="lines-13-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-13-series" name="lines-13-series" type="hidden" value="Inhumans vs. X-Men">
+                <input id="lines-13-issue" name="lines-13-issue" type="hidden" value="issue">
+                <input id="lines-13-iss_full" name="lines-13-iss_full" type="hidden" value="6-A">
+                <input id="lines-13-iss_num" name="lines-13-iss_num" type="hidden" value="6">
+                <input id="lines-13-iss_ext" name="lines-13-iss_ext" type="hidden" value="A">
+                <input id="lines-13-edition" name="lines-13-edition" type="hidden" value="Regular Leinil Francis Yu Cover">
+                <input id="lines-13-cvr_dt" name="lines-13-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-13-cvr_dt_year" name="lines-13-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-13-cvr_dt_month" name="lines-13-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-13-cvr_dt_day" name="lines-13-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-13-cover_price" name="lines-13-cover_price" type="hidden" value="4.99">
+                <input id="lines-13-owner" name="lines-13-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-13-purch_dt" name="lines-13-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-13-store" name="lines-13-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-13-trans_num" name="lines-13-trans_num" type="hidden" value="0">
+                <input id="lines-13-release_dt" name="lines-13-release_dt" type="hidden" value="2017-03-08">
+                <input id="lines-13-crossover" name="lines-13-crossover" type="hidden" value="Inhumans vs X-Men">
+                <input id="lines-13-story_arc" name="lines-13-story_arc" type="hidden" value="story-arc">
+                <input id="lines-13-title" name="lines-13-title" type="hidden" value="title">
+                <input id="lines-13-sub_title" name="lines-13-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-13-desc" name="lines-13-desc" style="width: 350px;" type="text" value="[14] Inhumans vs. X-Men #6-A May 2017 $4.99">
+
+                <input class="form-control" id="lines-13-str_seq" name="lines-13-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-13-str_cvr_price" name="lines-13-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-13-str_item_disc" name="lines-13-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-13-str_disc_price" name="lines-13-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-13-taxable_ind" name="lines-13-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-13-str_item_tax" name="lines-13-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-13-str_tax_adj" name="lines-13-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-13-str_tax_paid" name="lines-13-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-13-purch_price" name="lines-13-purch_price" style="width: 50px;" type="text" value="3.99">
+
+                <input id="lines-14-line_id" name="lines-14-line_id" type="hidden" value="199">
+                <input id="lines-14-file_id" name="lines-14-file_id" type="hidden" value="12">
+                <input id="lines-14-seq" name="lines-14-seq" type="hidden" value="15">
+                <input id="lines-14-ser_id" name="lines-14-ser_id" type="hidden" value="0">
+                <input id="lines-14-publisher" name="lines-14-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-14-series" name="lines-14-series" type="hidden" value="Jessica Jones">
+                <input id="lines-14-issue" name="lines-14-issue" type="hidden" value="issue">
+                <input id="lines-14-iss_full" name="lines-14-iss_full" type="hidden" value="6-B">
+                <input id="lines-14-iss_num" name="lines-14-iss_num" type="hidden" value="6">
+                <input id="lines-14-iss_ext" name="lines-14-iss_ext" type="hidden" value="B">
+                <input id="lines-14-edition" name="lines-14-edition" type="hidden" value="Variant David Marquez Cover">
+                <input id="lines-14-cvr_dt" name="lines-14-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-14-cvr_dt_year" name="lines-14-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-14-cvr_dt_month" name="lines-14-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-14-cvr_dt_day" name="lines-14-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-14-cover_price" name="lines-14-cover_price" type="hidden" value="3.99">
+                <input id="lines-14-owner" name="lines-14-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-14-purch_dt" name="lines-14-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-14-store" name="lines-14-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-14-trans_num" name="lines-14-trans_num" type="hidden" value="0">
+                <input id="lines-14-release_dt" name="lines-14-release_dt" type="hidden" value="2017-03-08">
+                <input id="lines-14-crossover" name="lines-14-crossover" type="hidden" value="crossover">
+                <input id="lines-14-story_arc" name="lines-14-story_arc" type="hidden" value="story-arc">
+                <input id="lines-14-title" name="lines-14-title" type="hidden" value="title">
+                <input id="lines-14-sub_title" name="lines-14-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-14-desc" name="lines-14-desc" style="width: 350px;" type="text" value="[15] Jessica Jones #6-B May 2017 $3.99">
+
+                <input class="form-control" id="lines-14-str_seq" name="lines-14-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-14-str_cvr_price" name="lines-14-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-14-str_item_disc" name="lines-14-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-14-str_disc_price" name="lines-14-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-14-taxable_ind" name="lines-14-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-14-str_item_tax" name="lines-14-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-14-str_tax_adj" name="lines-14-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-14-str_tax_paid" name="lines-14-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-14-purch_price" name="lines-14-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-15-line_id" name="lines-15-line_id" type="hidden" value="200">
+                <input id="lines-15-file_id" name="lines-15-file_id" type="hidden" value="12">
+                <input id="lines-15-seq" name="lines-15-seq" type="hidden" value="16">
+                <input id="lines-15-ser_id" name="lines-15-ser_id" type="hidden" value="0">
+                <input id="lines-15-publisher" name="lines-15-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-15-series" name="lines-15-series" type="hidden" value="Jessica Jones">
+                <input id="lines-15-issue" name="lines-15-issue" type="hidden" value="issue">
+                <input id="lines-15-iss_full" name="lines-15-iss_full" type="hidden" value="7-B">
+                <input id="lines-15-iss_num" name="lines-15-iss_num" type="hidden" value="7">
+                <input id="lines-15-iss_ext" name="lines-15-iss_ext" type="hidden" value="B">
+                <input id="lines-15-edition" name="lines-15-edition" type="hidden" value="Variant Nic Klein Cover">
+                <input id="lines-15-cvr_dt" name="lines-15-cvr_dt" type="hidden" value="June 2017">
+                <input id="lines-15-cvr_dt_year" name="lines-15-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-15-cvr_dt_month" name="lines-15-cvr_dt_month" type="hidden" value="6">
+                <input id="lines-15-cvr_dt_day" name="lines-15-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-15-cover_price" name="lines-15-cover_price" type="hidden" value="3.99">
+                <input id="lines-15-owner" name="lines-15-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-15-purch_dt" name="lines-15-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-15-store" name="lines-15-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-15-trans_num" name="lines-15-trans_num" type="hidden" value="0">
+                <input id="lines-15-release_dt" name="lines-15-release_dt" type="hidden" value="2017-04-05">
+                <input id="lines-15-crossover" name="lines-15-crossover" type="hidden" value="crossover">
+                <input id="lines-15-story_arc" name="lines-15-story_arc" type="hidden" value="story-arc">
+                <input id="lines-15-title" name="lines-15-title" type="hidden" value="title">
+                <input id="lines-15-sub_title" name="lines-15-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-15-desc" name="lines-15-desc" style="width: 350px;" type="text" value="[16] Jessica Jones #7-B June 2017 $3.99">
+
+                <input class="form-control" id="lines-15-str_seq" name="lines-15-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-15-str_cvr_price" name="lines-15-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-15-str_item_disc" name="lines-15-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-15-str_disc_price" name="lines-15-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-15-taxable_ind" name="lines-15-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-15-str_item_tax" name="lines-15-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-15-str_tax_adj" name="lines-15-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-15-str_tax_paid" name="lines-15-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-15-purch_price" name="lines-15-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-16-line_id" name="lines-16-line_id" type="hidden" value="201">
+                <input id="lines-16-file_id" name="lines-16-file_id" type="hidden" value="12">
+                <input id="lines-16-seq" name="lines-16-seq" type="hidden" value="17">
+                <input id="lines-16-ser_id" name="lines-16-ser_id" type="hidden" value="0">
+                <input id="lines-16-publisher" name="lines-16-publisher" type="hidden" value="IDW Publishing">
+                <input id="lines-16-series" name="lines-16-series" type="hidden" value="Micronauts (IDW Publishing)">
+                <input id="lines-16-issue" name="lines-16-issue" type="hidden" value="issue">
+                <input id="lines-16-iss_full" name="lines-16-iss_full" type="hidden" value="3-D">
+                <input id="lines-16-iss_num" name="lines-16-iss_num" type="hidden" value="3">
+                <input id="lines-16-iss_ext" name="lines-16-iss_ext" type="hidden" value="D">
+                <input id="lines-16-edition" name="lines-16-edition" type="hidden" value="eddition">
+                <input id="lines-16-cvr_dt" name="lines-16-cvr_dt" type="hidden" value="June 2016">
+                <input id="lines-16-cvr_dt_year" name="lines-16-cvr_dt_year" type="hidden" value="2016">
+                <input id="lines-16-cvr_dt_month" name="lines-16-cvr_dt_month" type="hidden" value="6">
+                <input id="lines-16-cvr_dt_day" name="lines-16-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-16-cover_price" name="lines-16-cover_price" type="hidden" value="3.99">
+                <input id="lines-16-owner" name="lines-16-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-16-purch_dt" name="lines-16-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-16-store" name="lines-16-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-16-trans_num" name="lines-16-trans_num" type="hidden" value="0">
+                <input id="lines-16-release_dt" name="lines-16-release_dt" type="hidden" value="2016-06-29">
+                <input id="lines-16-crossover" name="lines-16-crossover" type="hidden" value="crossover">
+                <input id="lines-16-story_arc" name="lines-16-story_arc" type="hidden" value="story-arc">
+                <input id="lines-16-title" name="lines-16-title" type="hidden" value="title">
+                <input id="lines-16-sub_title" name="lines-16-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-16-desc" name="lines-16-desc" style="width: 350px;" type="text" value="[17] Micronauts (IDW Publishing) #3-D June 2016 $3.99">
+
+                <input class="form-control" id="lines-16-str_seq" name="lines-16-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-16-str_cvr_price" name="lines-16-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-16-str_item_disc" name="lines-16-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-16-str_disc_price" name="lines-16-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-16-taxable_ind" name="lines-16-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-16-str_item_tax" name="lines-16-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-16-str_tax_adj" name="lines-16-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-16-str_tax_paid" name="lines-16-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-16-purch_price" name="lines-16-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-17-line_id" name="lines-17-line_id" type="hidden" value="202">
+                <input id="lines-17-file_id" name="lines-17-file_id" type="hidden" value="12">
+                <input id="lines-17-seq" name="lines-17-seq" type="hidden" value="18">
+                <input id="lines-17-ser_id" name="lines-17-ser_id" type="hidden" value="0">
+                <input id="lines-17-publisher" name="lines-17-publisher" type="hidden" value="IDW Publishing">
+                <input id="lines-17-series" name="lines-17-series" type="hidden" value="Micronauts (IDW Publishing)">
+                <input id="lines-17-issue" name="lines-17-issue" type="hidden" value="issue">
+                <input id="lines-17-iss_full" name="lines-17-iss_full" type="hidden" value="11-C">
+                <input id="lines-17-iss_num" name="lines-17-iss_num" type="hidden" value="11">
+                <input id="lines-17-iss_ext" name="lines-17-iss_ext" type="hidden" value="C">
+                <input id="lines-17-edition" name="lines-17-edition" type="hidden" value="Artyom Trakhanov Subscription Cover">
+                <input id="lines-17-cvr_dt" name="lines-17-cvr_dt" type="hidden" value="March 2017">
+                <input id="lines-17-cvr_dt_year" name="lines-17-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-17-cvr_dt_month" name="lines-17-cvr_dt_month" type="hidden" value="3">
+                <input id="lines-17-cvr_dt_day" name="lines-17-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-17-cover_price" name="lines-17-cover_price" type="hidden" value="3.99">
+                <input id="lines-17-owner" name="lines-17-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-17-purch_dt" name="lines-17-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-17-store" name="lines-17-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-17-trans_num" name="lines-17-trans_num" type="hidden" value="0">
+                <input id="lines-17-release_dt" name="lines-17-release_dt" type="hidden" value="2017-04-12">
+                <input id="lines-17-crossover" name="lines-17-crossover" type="hidden" value="crossover">
+                <input id="lines-17-story_arc" name="lines-17-story_arc" type="hidden" value="story-arc">
+                <input id="lines-17-title" name="lines-17-title" type="hidden" value="title">
+                <input id="lines-17-sub_title" name="lines-17-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-17-desc" name="lines-17-desc" style="width: 350px;" type="text" value="[18] Micronauts (IDW Publishing) #11-C March 2017 $3.99">
+
+                <input class="form-control" id="lines-17-str_seq" name="lines-17-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-17-str_cvr_price" name="lines-17-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-17-str_item_disc" name="lines-17-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-17-str_disc_price" name="lines-17-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-17-taxable_ind" name="lines-17-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-17-str_item_tax" name="lines-17-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-17-str_tax_adj" name="lines-17-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-17-str_tax_paid" name="lines-17-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-17-purch_price" name="lines-17-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-18-line_id" name="lines-18-line_id" type="hidden" value="203">
+                <input id="lines-18-file_id" name="lines-18-file_id" type="hidden" value="12">
+                <input id="lines-18-seq" name="lines-18-seq" type="hidden" value="19">
+                <input id="lines-18-ser_id" name="lines-18-ser_id" type="hidden" value="0">
+                <input id="lines-18-publisher" name="lines-18-publisher" type="hidden" value="IDW Publishing">
+                <input id="lines-18-series" name="lines-18-series" type="hidden" value="Micronauts: Wrath Of Karza">
+                <input id="lines-18-issue" name="lines-18-issue" type="hidden" value="issue">
+                <input id="lines-18-iss_full" name="lines-18-iss_full" type="hidden" value="1">
+                <input id="lines-18-iss_num" name="lines-18-iss_num" type="hidden" value="1">
+                <input id="lines-18-iss_ext" name="lines-18-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-18-edition" name="lines-18-edition" type="hidden" value="Regular Cover">
+                <input id="lines-18-cvr_dt" name="lines-18-cvr_dt" type="hidden" value="April 2017">
+                <input id="lines-18-cvr_dt_year" name="lines-18-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-18-cvr_dt_month" name="lines-18-cvr_dt_month" type="hidden" value="4">
+                <input id="lines-18-cvr_dt_day" name="lines-18-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-18-cover_price" name="lines-18-cover_price" type="hidden" value="3.99">
+                <input id="lines-18-owner" name="lines-18-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-18-purch_dt" name="lines-18-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-18-store" name="lines-18-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-18-trans_num" name="lines-18-trans_num" type="hidden" value="0">
+                <input id="lines-18-release_dt" name="lines-18-release_dt" type="hidden" value="2017-04-26">
+                <input id="lines-18-crossover" name="lines-18-crossover" type="hidden" value="crossover">
+                <input id="lines-18-story_arc" name="lines-18-story_arc" type="hidden" value="story-arc">
+                <input id="lines-18-title" name="lines-18-title" type="hidden" value="title">
+                <input id="lines-18-sub_title" name="lines-18-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-18-desc" name="lines-18-desc" style="width: 350px;" type="text" value="[19] Micronauts: Wrath Of Karza #1 April 2017 $3.99">
+
+                <input class="form-control" id="lines-18-str_seq" name="lines-18-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-18-str_cvr_price" name="lines-18-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-18-str_item_disc" name="lines-18-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-18-str_disc_price" name="lines-18-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-18-taxable_ind" name="lines-18-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-18-str_item_tax" name="lines-18-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-18-str_tax_adj" name="lines-18-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-18-str_tax_paid" name="lines-18-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-18-purch_price" name="lines-18-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-19-line_id" name="lines-19-line_id" type="hidden" value="204">
+                <input id="lines-19-file_id" name="lines-19-file_id" type="hidden" value="12">
+                <input id="lines-19-seq" name="lines-19-seq" type="hidden" value="20">
+                <input id="lines-19-ser_id" name="lines-19-ser_id" type="hidden" value="0">
+                <input id="lines-19-publisher" name="lines-19-publisher" type="hidden" value="Image Comics">
+                <input id="lines-19-series" name="lines-19-series" type="hidden" value="Monstress">
+                <input id="lines-19-issue" name="lines-19-issue" type="hidden" value="issue">
+                <input id="lines-19-iss_full" name="lines-19-iss_full" type="hidden" value="11">
+                <input id="lines-19-iss_num" name="lines-19-iss_num" type="hidden" value="11">
+                <input id="lines-19-iss_ext" name="lines-19-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-19-edition" name="lines-19-edition" type="hidden" value="eddition">
+                <input id="lines-19-cvr_dt" name="lines-19-cvr_dt" type="hidden" value="April 2017">
+                <input id="lines-19-cvr_dt_year" name="lines-19-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-19-cvr_dt_month" name="lines-19-cvr_dt_month" type="hidden" value="4">
+                <input id="lines-19-cvr_dt_day" name="lines-19-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-19-cover_price" name="lines-19-cover_price" type="hidden" value="3.99">
+                <input id="lines-19-owner" name="lines-19-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-19-purch_dt" name="lines-19-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-19-store" name="lines-19-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-19-trans_num" name="lines-19-trans_num" type="hidden" value="0">
+                <input id="lines-19-release_dt" name="lines-19-release_dt" type="hidden" value="2017-04-19">
+                <input id="lines-19-crossover" name="lines-19-crossover" type="hidden" value="crossover">
+                <input id="lines-19-story_arc" name="lines-19-story_arc" type="hidden" value="story-arc">
+                <input id="lines-19-title" name="lines-19-title" type="hidden" value="title">
+                <input id="lines-19-sub_title" name="lines-19-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-19-desc" name="lines-19-desc" style="width: 350px;" type="text" value="[20] Monstress #11 April 2017 $3.99">
+
+                <input class="form-control" id="lines-19-str_seq" name="lines-19-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-19-str_cvr_price" name="lines-19-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-19-str_item_disc" name="lines-19-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-19-str_disc_price" name="lines-19-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-19-taxable_ind" name="lines-19-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-19-str_item_tax" name="lines-19-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-19-str_tax_adj" name="lines-19-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-19-str_tax_paid" name="lines-19-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-19-purch_price" name="lines-19-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-20-line_id" name="lines-20-line_id" type="hidden" value="205">
+                <input id="lines-20-file_id" name="lines-20-file_id" type="hidden" value="12">
+                <input id="lines-20-seq" name="lines-20-seq" type="hidden" value="21">
+                <input id="lines-20-ser_id" name="lines-20-ser_id" type="hidden" value="0">
+                <input id="lines-20-publisher" name="lines-20-publisher" type="hidden" value="IDW Publishing">
+                <input id="lines-20-series" name="lines-20-series" type="hidden" value="Orphan Black: Deviations">
+                <input id="lines-20-issue" name="lines-20-issue" type="hidden" value="issue">
+                <input id="lines-20-iss_full" name="lines-20-iss_full" type="hidden" value="1-B">
+                <input id="lines-20-iss_num" name="lines-20-iss_num" type="hidden" value="1">
+                <input id="lines-20-iss_ext" name="lines-20-iss_ext" type="hidden" value="B">
+                <input id="lines-20-edition" name="lines-20-edition" type="hidden" value="eddition">
+                <input id="lines-20-cvr_dt" name="lines-20-cvr_dt" type="hidden" value="March 2017">
+                <input id="lines-20-cvr_dt_year" name="lines-20-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-20-cvr_dt_month" name="lines-20-cvr_dt_month" type="hidden" value="3">
+                <input id="lines-20-cvr_dt_day" name="lines-20-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-20-cover_price" name="lines-20-cover_price" type="hidden" value="4.99">
+                <input id="lines-20-owner" name="lines-20-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-20-purch_dt" name="lines-20-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-20-store" name="lines-20-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-20-trans_num" name="lines-20-trans_num" type="hidden" value="0">
+                <input id="lines-20-release_dt" name="lines-20-release_dt" type="hidden" value="2017-03-29">
+                <input id="lines-20-crossover" name="lines-20-crossover" type="hidden" value="crossover">
+                <input id="lines-20-story_arc" name="lines-20-story_arc" type="hidden" value="story-arc">
+                <input id="lines-20-title" name="lines-20-title" type="hidden" value="title">
+                <input id="lines-20-sub_title" name="lines-20-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-20-desc" name="lines-20-desc" style="width: 350px;" type="text" value="[21] Orphan Black: Deviations #1-B March 2017 $4.99">
+
+                <input class="form-control" id="lines-20-str_seq" name="lines-20-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-20-str_cvr_price" name="lines-20-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-20-str_item_disc" name="lines-20-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-20-str_disc_price" name="lines-20-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-20-taxable_ind" name="lines-20-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-20-str_item_tax" name="lines-20-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-20-str_tax_adj" name="lines-20-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-20-str_tax_paid" name="lines-20-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-20-purch_price" name="lines-20-purch_price" style="width: 50px;" type="text" value="3.99">
+
+                <input id="lines-21-line_id" name="lines-21-line_id" type="hidden" value="206">
+                <input id="lines-21-file_id" name="lines-21-file_id" type="hidden" value="12">
+                <input id="lines-21-seq" name="lines-21-seq" type="hidden" value="22">
+                <input id="lines-21-ser_id" name="lines-21-ser_id" type="hidden" value="0">
+                <input id="lines-21-publisher" name="lines-21-publisher" type="hidden" value="IDW Publishing">
+                <input id="lines-21-series" name="lines-21-series" type="hidden" value="Orphan Black: Deviations">
+                <input id="lines-21-issue" name="lines-21-issue" type="hidden" value="issue">
+                <input id="lines-21-iss_full" name="lines-21-iss_full" type="hidden" value="2-A">
+                <input id="lines-21-iss_num" name="lines-21-iss_num" type="hidden" value="2">
+                <input id="lines-21-iss_ext" name="lines-21-iss_ext" type="hidden" value="A">
+                <input id="lines-21-edition" name="lines-21-edition" type="hidden" value="eddition">
+                <input id="lines-21-cvr_dt" name="lines-21-cvr_dt" type="hidden" value="cover-date">
+                <input id="lines-21-cvr_dt_year" name="lines-21-cvr_dt_year" type="hidden" value="0">
+                <input id="lines-21-cvr_dt_month" name="lines-21-cvr_dt_month" type="hidden" value="0">
+                <input id="lines-21-cvr_dt_day" name="lines-21-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-21-cover_price" name="lines-21-cover_price" type="hidden" value="3.99">
+                <input id="lines-21-owner" name="lines-21-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-21-purch_dt" name="lines-21-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-21-store" name="lines-21-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-21-trans_num" name="lines-21-trans_num" type="hidden" value="0">
+                <input id="lines-21-release_dt" name="lines-21-release_dt" type="hidden" value="2017-04-26">
+                <input id="lines-21-crossover" name="lines-21-crossover" type="hidden" value="crossover">
+                <input id="lines-21-story_arc" name="lines-21-story_arc" type="hidden" value="story-arc">
+                <input id="lines-21-title" name="lines-21-title" type="hidden" value="title">
+                <input id="lines-21-sub_title" name="lines-21-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-21-desc" name="lines-21-desc" style="width: 350px;" type="text" value="[22] Orphan Black: Deviations #2-A cover-date $3.99">
+
+                <input class="form-control" id="lines-21-str_seq" name="lines-21-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-21-str_cvr_price" name="lines-21-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-21-str_item_disc" name="lines-21-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-21-str_disc_price" name="lines-21-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-21-taxable_ind" name="lines-21-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-21-str_item_tax" name="lines-21-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-21-str_tax_adj" name="lines-21-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-21-str_tax_paid" name="lines-21-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-21-purch_price" name="lines-21-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-22-line_id" name="lines-22-line_id" type="hidden" value="207">
+                <input id="lines-22-file_id" name="lines-22-file_id" type="hidden" value="12">
+                <input id="lines-22-seq" name="lines-22-seq" type="hidden" value="23">
+                <input id="lines-22-ser_id" name="lines-22-ser_id" type="hidden" value="0">
+                <input id="lines-22-publisher" name="lines-22-publisher" type="hidden" value="Image Comics">
+                <input id="lines-22-series" name="lines-22-series" type="hidden" value="Outcast By Kirkman &amp; Azaceta">
+                <input id="lines-22-issue" name="lines-22-issue" type="hidden" value="issue">
+                <input id="lines-22-iss_full" name="lines-22-iss_full" type="hidden" value="26">
+                <input id="lines-22-iss_num" name="lines-22-iss_num" type="hidden" value="26">
+                <input id="lines-22-iss_ext" name="lines-22-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-22-edition" name="lines-22-edition" type="hidden" value="eddition">
+                <input id="lines-22-cvr_dt" name="lines-22-cvr_dt" type="hidden" value="March 2017">
+                <input id="lines-22-cvr_dt_year" name="lines-22-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-22-cvr_dt_month" name="lines-22-cvr_dt_month" type="hidden" value="3">
+                <input id="lines-22-cvr_dt_day" name="lines-22-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-22-cover_price" name="lines-22-cover_price" type="hidden" value="2.99">
+                <input id="lines-22-owner" name="lines-22-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-22-purch_dt" name="lines-22-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-22-store" name="lines-22-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-22-trans_num" name="lines-22-trans_num" type="hidden" value="0">
+                <input id="lines-22-release_dt" name="lines-22-release_dt" type="hidden" value="2017-03-29">
+                <input id="lines-22-crossover" name="lines-22-crossover" type="hidden" value="crossover">
+                <input id="lines-22-story_arc" name="lines-22-story_arc" type="hidden" value="story-arc">
+                <input id="lines-22-title" name="lines-22-title" type="hidden" value="title">
+                <input id="lines-22-sub_title" name="lines-22-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-22-desc" name="lines-22-desc" style="width: 350px;" type="text" value="[23] Outcast By Kirkman &amp; Azaceta #26 March 2017 $2.99">
+
+                <input class="form-control" id="lines-22-str_seq" name="lines-22-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-22-str_cvr_price" name="lines-22-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-22-str_item_disc" name="lines-22-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-22-str_disc_price" name="lines-22-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-22-taxable_ind" name="lines-22-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-22-str_item_tax" name="lines-22-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-22-str_tax_adj" name="lines-22-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-22-str_tax_paid" name="lines-22-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-22-purch_price" name="lines-22-purch_price" style="width: 50px;" type="text" value="2.39">
+
+                <input id="lines-23-line_id" name="lines-23-line_id" type="hidden" value="208">
+                <input id="lines-23-file_id" name="lines-23-file_id" type="hidden" value="12">
+                <input id="lines-23-seq" name="lines-23-seq" type="hidden" value="24">
+                <input id="lines-23-ser_id" name="lines-23-ser_id" type="hidden" value="0">
+                <input id="lines-23-publisher" name="lines-23-publisher" type="hidden" value="Image Comics">
+                <input id="lines-23-series" name="lines-23-series" type="hidden" value="Outcast By Kirkman &amp; Azaceta">
+                <input id="lines-23-issue" name="lines-23-issue" type="hidden" value="issue">
+                <input id="lines-23-iss_full" name="lines-23-iss_full" type="hidden" value="27">
+                <input id="lines-23-iss_num" name="lines-23-iss_num" type="hidden" value="27">
+                <input id="lines-23-iss_ext" name="lines-23-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-23-edition" name="lines-23-edition" type="hidden" value="eddition">
+                <input id="lines-23-cvr_dt" name="lines-23-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-23-cvr_dt_year" name="lines-23-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-23-cvr_dt_month" name="lines-23-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-23-cvr_dt_day" name="lines-23-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-23-cover_price" name="lines-23-cover_price" type="hidden" value="2.99">
+                <input id="lines-23-owner" name="lines-23-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-23-purch_dt" name="lines-23-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-23-store" name="lines-23-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-23-trans_num" name="lines-23-trans_num" type="hidden" value="0">
+                <input id="lines-23-release_dt" name="lines-23-release_dt" type="hidden" value="2017-05-03">
+                <input id="lines-23-crossover" name="lines-23-crossover" type="hidden" value="crossover">
+                <input id="lines-23-story_arc" name="lines-23-story_arc" type="hidden" value="story-arc">
+                <input id="lines-23-title" name="lines-23-title" type="hidden" value="title">
+                <input id="lines-23-sub_title" name="lines-23-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-23-desc" name="lines-23-desc" style="width: 350px;" type="text" value="[24] Outcast By Kirkman &amp; Azaceta #27 May 2017 $2.99">
+
+                <input class="form-control" id="lines-23-str_seq" name="lines-23-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-23-str_cvr_price" name="lines-23-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-23-str_item_disc" name="lines-23-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-23-str_disc_price" name="lines-23-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-23-taxable_ind" name="lines-23-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-23-str_item_tax" name="lines-23-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-23-str_tax_adj" name="lines-23-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-23-str_tax_paid" name="lines-23-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-23-purch_price" name="lines-23-purch_price" style="width: 50px;" type="text" value="2.39">
+
+                <input id="lines-24-line_id" name="lines-24-line_id" type="hidden" value="209">
+                <input id="lines-24-file_id" name="lines-24-file_id" type="hidden" value="12">
+                <input id="lines-24-seq" name="lines-24-seq" type="hidden" value="25">
+                <input id="lines-24-ser_id" name="lines-24-ser_id" type="hidden" value="0">
+                <input id="lines-24-publisher" name="lines-24-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-24-series" name="lines-24-series" type="hidden" value="Star Wars">
+                <input id="lines-24-issue" name="lines-24-issue" type="hidden" value="issue">
+                <input id="lines-24-iss_full" name="lines-24-iss_full" type="hidden" value="29-A">
+                <input id="lines-24-iss_num" name="lines-24-iss_num" type="hidden" value="29">
+                <input id="lines-24-iss_ext" name="lines-24-iss_ext" type="hidden" value="A">
+                <input id="lines-24-edition" name="lines-24-edition" type="hidden" value="Regular Stuart Immonen Cover">
+                <input id="lines-24-cvr_dt" name="lines-24-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-24-cvr_dt_year" name="lines-24-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-24-cvr_dt_month" name="lines-24-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-24-cvr_dt_day" name="lines-24-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-24-cover_price" name="lines-24-cover_price" type="hidden" value="3.99">
+                <input id="lines-24-owner" name="lines-24-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-24-purch_dt" name="lines-24-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-24-store" name="lines-24-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-24-trans_num" name="lines-24-trans_num" type="hidden" value="0">
+                <input id="lines-24-release_dt" name="lines-24-release_dt" type="hidden" value="2017-03-01">
+                <input id="lines-24-crossover" name="lines-24-crossover" type="hidden" value="crossover">
+                <input id="lines-24-story_arc" name="lines-24-story_arc" type="hidden" value="Yoda&#x27;s Secret War">
+                <input id="lines-24-title" name="lines-24-title" type="hidden" value="Book VI, Part IV">
+                <input id="lines-24-sub_title" name="lines-24-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-24-desc" name="lines-24-desc" style="width: 350px;" type="text" value="[25] Star Wars #29-A May 2017 $3.99">
+
+                <input class="form-control" id="lines-24-str_seq" name="lines-24-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-24-str_cvr_price" name="lines-24-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-24-str_item_disc" name="lines-24-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-24-str_disc_price" name="lines-24-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-24-taxable_ind" name="lines-24-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-24-str_item_tax" name="lines-24-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-24-str_tax_adj" name="lines-24-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-24-str_tax_paid" name="lines-24-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-24-purch_price" name="lines-24-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-25-line_id" name="lines-25-line_id" type="hidden" value="210">
+                <input id="lines-25-file_id" name="lines-25-file_id" type="hidden" value="12">
+                <input id="lines-25-seq" name="lines-25-seq" type="hidden" value="26">
+                <input id="lines-25-ser_id" name="lines-25-ser_id" type="hidden" value="0">
+                <input id="lines-25-publisher" name="lines-25-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-25-series" name="lines-25-series" type="hidden" value="Uncanny Avengers, Vol. 3">
+                <input id="lines-25-issue" name="lines-25-issue" type="hidden" value="issue">
+                <input id="lines-25-iss_full" name="lines-25-iss_full" type="hidden" value="21">
+                <input id="lines-25-iss_num" name="lines-25-iss_num" type="hidden" value="21">
+                <input id="lines-25-iss_ext" name="lines-25-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-25-edition" name="lines-25-edition" type="hidden" value="eddition">
+                <input id="lines-25-cvr_dt" name="lines-25-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-25-cvr_dt_year" name="lines-25-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-25-cvr_dt_month" name="lines-25-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-25-cvr_dt_day" name="lines-25-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-25-cover_price" name="lines-25-cover_price" type="hidden" value="3.99">
+                <input id="lines-25-owner" name="lines-25-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-25-purch_dt" name="lines-25-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-25-store" name="lines-25-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-25-trans_num" name="lines-25-trans_num" type="hidden" value="0">
+                <input id="lines-25-release_dt" name="lines-25-release_dt" type="hidden" value="2017-03-15">
+                <input id="lines-25-crossover" name="lines-25-crossover" type="hidden" value="crossover">
+                <input id="lines-25-story_arc" name="lines-25-story_arc" type="hidden" value="story-arc">
+                <input id="lines-25-title" name="lines-25-title" type="hidden" value="Maximum Effort">
+                <input id="lines-25-sub_title" name="lines-25-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-25-desc" name="lines-25-desc" style="width: 350px;" type="text" value="[26] Uncanny Avengers, Vol. 3 #21 May 2017 $3.99">
+
+                <input class="form-control" id="lines-25-str_seq" name="lines-25-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-25-str_cvr_price" name="lines-25-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-25-str_item_disc" name="lines-25-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-25-str_disc_price" name="lines-25-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-25-taxable_ind" name="lines-25-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-25-str_item_tax" name="lines-25-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-25-str_tax_adj" name="lines-25-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-25-str_tax_paid" name="lines-25-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-25-purch_price" name="lines-25-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-26-line_id" name="lines-26-line_id" type="hidden" value="211">
+                <input id="lines-26-file_id" name="lines-26-file_id" type="hidden" value="12">
+                <input id="lines-26-seq" name="lines-26-seq" type="hidden" value="27">
+                <input id="lines-26-ser_id" name="lines-26-ser_id" type="hidden" value="0">
+                <input id="lines-26-publisher" name="lines-26-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-26-series" name="lines-26-series" type="hidden" value="Uncanny Avengers, Vol. 3">
+                <input id="lines-26-issue" name="lines-26-issue" type="hidden" value="issue">
+                <input id="lines-26-iss_full" name="lines-26-iss_full" type="hidden" value="22">
+                <input id="lines-26-iss_num" name="lines-26-iss_num" type="hidden" value="22">
+                <input id="lines-26-iss_ext" name="lines-26-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-26-edition" name="lines-26-edition" type="hidden" value="eddition">
+                <input id="lines-26-cvr_dt" name="lines-26-cvr_dt" type="hidden" value="June 2017">
+                <input id="lines-26-cvr_dt_year" name="lines-26-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-26-cvr_dt_month" name="lines-26-cvr_dt_month" type="hidden" value="6">
+                <input id="lines-26-cvr_dt_day" name="lines-26-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-26-cover_price" name="lines-26-cover_price" type="hidden" value="3.99">
+                <input id="lines-26-owner" name="lines-26-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-26-purch_dt" name="lines-26-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-26-store" name="lines-26-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-26-trans_num" name="lines-26-trans_num" type="hidden" value="0">
+                <input id="lines-26-release_dt" name="lines-26-release_dt" type="hidden" value="2017-04-05">
+                <input id="lines-26-crossover" name="lines-26-crossover" type="hidden" value="crossover">
+                <input id="lines-26-story_arc" name="lines-26-story_arc" type="hidden" value="story-arc">
+                <input id="lines-26-title" name="lines-26-title" type="hidden" value="Rogue Won">
+                <input id="lines-26-sub_title" name="lines-26-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-26-desc" name="lines-26-desc" style="width: 350px;" type="text" value="[27] Uncanny Avengers, Vol. 3 #22 June 2017 $3.99">
+
+                <input class="form-control" id="lines-26-str_seq" name="lines-26-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-26-str_cvr_price" name="lines-26-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-26-str_item_disc" name="lines-26-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-26-str_disc_price" name="lines-26-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-26-taxable_ind" name="lines-26-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-26-str_item_tax" name="lines-26-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-26-str_tax_adj" name="lines-26-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-26-str_tax_paid" name="lines-26-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-26-purch_price" name="lines-26-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-27-line_id" name="lines-27-line_id" type="hidden" value="212">
+                <input id="lines-27-file_id" name="lines-27-file_id" type="hidden" value="12">
+                <input id="lines-27-seq" name="lines-27-seq" type="hidden" value="28">
+                <input id="lines-27-ser_id" name="lines-27-ser_id" type="hidden" value="0">
+                <input id="lines-27-publisher" name="lines-27-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-27-series" name="lines-27-series" type="hidden" value="Uncanny X-Men, Vol. 4">
+                <input id="lines-27-issue" name="lines-27-issue" type="hidden" value="issue">
+                <input id="lines-27-iss_full" name="lines-27-iss_full" type="hidden" value="19">
+                <input id="lines-27-iss_num" name="lines-27-iss_num" type="hidden" value="19">
+                <input id="lines-27-iss_ext" name="lines-27-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-27-edition" name="lines-27-edition" type="hidden" value="eddition">
+                <input id="lines-27-cvr_dt" name="lines-27-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-27-cvr_dt_year" name="lines-27-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-27-cvr_dt_month" name="lines-27-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-27-cvr_dt_day" name="lines-27-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-27-cover_price" name="lines-27-cover_price" type="hidden" value="3.99">
+                <input id="lines-27-owner" name="lines-27-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-27-purch_dt" name="lines-27-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-27-store" name="lines-27-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-27-trans_num" name="lines-27-trans_num" type="hidden" value="0">
+                <input id="lines-27-release_dt" name="lines-27-release_dt" type="hidden" value="2017-03-15">
+                <input id="lines-27-crossover" name="lines-27-crossover" type="hidden" value="crossover">
+                <input id="lines-27-story_arc" name="lines-27-story_arc" type="hidden" value="story-arc">
+                <input id="lines-27-title" name="lines-27-title" type="hidden" value="title">
+                <input id="lines-27-sub_title" name="lines-27-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-27-desc" name="lines-27-desc" style="width: 350px;" type="text" value="[28] Uncanny X-Men, Vol. 4 #19 May 2017 $3.99">
+
+                <input class="form-control" id="lines-27-str_seq" name="lines-27-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-27-str_cvr_price" name="lines-27-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-27-str_item_disc" name="lines-27-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-27-str_disc_price" name="lines-27-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-27-taxable_ind" name="lines-27-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-27-str_item_tax" name="lines-27-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-27-str_tax_adj" name="lines-27-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-27-str_tax_paid" name="lines-27-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-27-purch_price" name="lines-27-purch_price" style="width: 50px;" type="text" value="3.19">
+
+                <input id="lines-28-line_id" name="lines-28-line_id" type="hidden" value="213">
+                <input id="lines-28-file_id" name="lines-28-file_id" type="hidden" value="12">
+                <input id="lines-28-seq" name="lines-28-seq" type="hidden" value="29">
+                <input id="lines-28-ser_id" name="lines-28-ser_id" type="hidden" value="0">
+                <input id="lines-28-publisher" name="lines-28-publisher" type="hidden" value="Image Comics">
+                <input id="lines-28-series" name="lines-28-series" type="hidden" value="The Walking Dead">
+                <input id="lines-28-issue" name="lines-28-issue" type="hidden" value="issue">
+                <input id="lines-28-iss_full" name="lines-28-iss_full" type="hidden" value="166">
+                <input id="lines-28-iss_num" name="lines-28-iss_num" type="hidden" value="166">
+                <input id="lines-28-iss_ext" name="lines-28-iss_ext" type="hidden" value="issue-extension">
+                <input id="lines-28-edition" name="lines-28-edition" type="hidden" value="eddition">
+                <input id="lines-28-cvr_dt" name="lines-28-cvr_dt" type="hidden" value="April 2017">
+                <input id="lines-28-cvr_dt_year" name="lines-28-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-28-cvr_dt_month" name="lines-28-cvr_dt_month" type="hidden" value="4">
+                <input id="lines-28-cvr_dt_day" name="lines-28-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-28-cover_price" name="lines-28-cover_price" type="hidden" value="2.99">
+                <input id="lines-28-owner" name="lines-28-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-28-purch_dt" name="lines-28-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-28-store" name="lines-28-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-28-trans_num" name="lines-28-trans_num" type="hidden" value="0">
+                <input id="lines-28-release_dt" name="lines-28-release_dt" type="hidden" value="2017-04-05">
+                <input id="lines-28-crossover" name="lines-28-crossover" type="hidden" value="crossover">
+                <input id="lines-28-story_arc" name="lines-28-story_arc" type="hidden" value="story-arc">
+                <input id="lines-28-title" name="lines-28-title" type="hidden" value="No Surrender">
+                <input id="lines-28-sub_title" name="lines-28-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-28-desc" name="lines-28-desc" style="width: 350px;" type="text" value="[29] The Walking Dead #166 April 2017 $2.99">
+
+                <input class="form-control" id="lines-28-str_seq" name="lines-28-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-28-str_cvr_price" name="lines-28-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-28-str_item_disc" name="lines-28-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-28-str_disc_price" name="lines-28-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-28-taxable_ind" name="lines-28-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-28-str_item_tax" name="lines-28-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-28-str_tax_adj" name="lines-28-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-28-str_tax_paid" name="lines-28-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-28-purch_price" name="lines-28-purch_price" style="width: 50px;" type="text" value="2.39">
+
+                <input id="lines-29-line_id" name="lines-29-line_id" type="hidden" value="214">
+                <input id="lines-29-file_id" name="lines-29-file_id" type="hidden" value="12">
+                <input id="lines-29-seq" name="lines-29-seq" type="hidden" value="30">
+                <input id="lines-29-ser_id" name="lines-29-ser_id" type="hidden" value="0">
+                <input id="lines-29-publisher" name="lines-29-publisher" type="hidden" value="Marvel Comics">
+                <input id="lines-29-series" name="lines-29-series" type="hidden" value="X-Men Prime, Vol. 2">
+                <input id="lines-29-issue" name="lines-29-issue" type="hidden" value="issue">
+                <input id="lines-29-iss_full" name="lines-29-iss_full" type="hidden" value="1-A">
+                <input id="lines-29-iss_num" name="lines-29-iss_num" type="hidden" value="1">
+                <input id="lines-29-iss_ext" name="lines-29-iss_ext" type="hidden" value="A">
+                <input id="lines-29-edition" name="lines-29-edition" type="hidden" value="Regular Ardian Syaf Cover">
+                <input id="lines-29-cvr_dt" name="lines-29-cvr_dt" type="hidden" value="May 2017">
+                <input id="lines-29-cvr_dt_year" name="lines-29-cvr_dt_year" type="hidden" value="2017">
+                <input id="lines-29-cvr_dt_month" name="lines-29-cvr_dt_month" type="hidden" value="5">
+                <input id="lines-29-cvr_dt_day" name="lines-29-cvr_dt_day" type="hidden" value="0">
+                <input id="lines-29-cover_price" name="lines-29-cover_price" type="hidden" value="4.99">
+                <input id="lines-29-owner" name="lines-29-owner" type="hidden" value="Greg Skluzacek">
+                <input id="lines-29-purch_dt" name="lines-29-purch_dt" type="hidden" value="2017-05-21">
+                <input id="lines-29-store" name="lines-29-store" type="hidden" value="Modern Age Comics">
+                <input id="lines-29-trans_num" name="lines-29-trans_num" type="hidden" value="0">
+                <input id="lines-29-release_dt" name="lines-29-release_dt" type="hidden" value="2017-03-29">
+                <input id="lines-29-crossover" name="lines-29-crossover" type="hidden" value="crossover">
+                <input id="lines-29-story_arc" name="lines-29-story_arc" type="hidden" value="story-arc">
+                <input id="lines-29-title" name="lines-29-title" type="hidden" value="title">
+                <input id="lines-29-sub_title" name="lines-29-sub_title" type="hidden" value="sub-title">
+
+                <input class="form-control" id="lines-29-desc" name="lines-29-desc" style="width: 350px;" type="text" value="[30] X-Men Prime, Vol. 2 #1-A May 2017 $4.99">
+
+                <input class="form-control" id="lines-29-str_seq" name="lines-29-str_seq" style="width: 50px;" type="text" value="0">
+
+                <input class="form-control" id="lines-29-str_cvr_price" name="lines-29-str_cvr_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-29-str_item_disc" name="lines-29-str_item_disc" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-29-str_disc_price" name="lines-29-str_disc_price" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-29-taxable_ind" name="lines-29-taxable_ind" style="width: 50px;" type="text" value="N">
+
+                <input class="form-control" id="lines-29-str_item_tax" name="lines-29-str_item_tax" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-29-str_tax_adj" name="lines-29-str_tax_adj" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-29-str_tax_paid" name="lines-29-str_tax_paid" style="width: 50px;" type="text" value="0.00">
+
+                <input class="form-control" id="lines-29-purch_price" name="lines-29-purch_price" style="width: 50px;" type="text" value="3.99">
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment-with-locales.min.js"></script>
+    <script>
+        moment.locale("en");
+
+        function flask_moment_render(elem) {
+            $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+            $(elem).removeClass('flask-moment').show();
+        }
+
+        function flask_moment_render_all() {
+            $('.flask-moment').each(function() {
+                flask_moment_render(this);
+                if ($(this).data('refresh')) {
+                    (function(elem, interval) {
+                        setInterval(function() {
+                            flask_moment_render(elem)
+                        }, interval);
+                    })(this, $(this).data('refresh'));
+                }
+            })
+        }
+        $(document).ready(function() {
+            flask_moment_render_all();
+        });
+        
+        $("input[class='form-control']").click(function(){
+        	alert($(this)[0].id)
+        });
+    </script>
+
+</body>
+
+</html>

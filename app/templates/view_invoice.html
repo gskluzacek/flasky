@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Komic Logr - view invoice{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='invoice_style.css') }}">
+{% endblock %}
+
+{% block page_content %}
+<div class="invoice-content">
+    <table cellpadding="0" cellspacing="0" class="inv_hdr">
+        <tr>
+            <td class="lbl_txt rt_algn">Purch Date:&nbsp;</td>
+            <td>{{ hdr.purch_dt }}</td>
+        </tr>
+        <tr>
+            <td class="lbl_txt rt_algn">Store:&nbsp;</td>
+            <td>{{ hdr.store }}</td>
+        </tr>
+        <tr>
+            <td class="lbl_txt rt_algn">Trans #:&nbsp;</td>
+            <td>{{ hdr.trans_num }}</td>
+        </tr>
+    </table>
+    <br />
+    <table class="inv_dtl">
+        <tr class="col_hdr">
+            {% for col in cols %}<td>{{ col }}</td>{% endfor %}
+        </tr>{% for row in dtl %}
+        <tr class="col_dtl">
+            <td>{{ row.series }}</td>
+            <td class="int_val rt_algn">{{ row.year }}</td>
+            <td>{{ row.notes }}</td>
+            <td class="dt_val">{{ row.cover_dt }}</td>
+            <td class="int_val rt_algn">{{ row.issue }}</td>
+            <td class="mon_unit rt_algn">{{ row.cover_price }}</td>
+            <td class="mon_unit rt_algn">{{ row.purch_price }}</td>
+        </tr>{% endfor %}
+        <tr class="col_ftr">
+            <td colspan="5" class="lbl_txt rt_algn">TOTAL</td>
+            <td class="mon_unit rt_algn"><span class="col_ttl">{{ hdr.tot_cover_price }}</span></td>
+            <td class="mon_unit rt_algn"><span class="col_ttl">{{ hdr.tot_purch_price }}</span></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td class="lbl_txt rt_algn">Payment Method:&nbsp;</td>
+            <td>{{ hdr.pmt_meth }}</td>
+        </tr>
+        <tr>
+            <td class="lbl_txt rt_algn">Transaction Amt:&nbsp;</td>
+            <td>{{ hdr.trans_total }}</td>
+        </tr>
+        <tr>
+            <td class="lbl_txt rt_algn">NEI Trans Amt:&nbsp;</td>
+            <td>{{ hdr.nei_trans_total }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

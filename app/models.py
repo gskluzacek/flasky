@@ -163,11 +163,7 @@ class File(db.Model):
             str(tot_purch_price)
         ))
 
-    def generate_html_invoice(self):
-        loader = FileSystemLoader('')
-        env = Environment(loader=loader)
-        inv_template = env.get_template('invoice_template.html')
-
+    def get_invoice_data(self):
         cols = [
             'Title',
             'Year',
@@ -207,7 +203,15 @@ class File(db.Model):
         hdr_data['tot_cover_price'] = tot_cvr_price
         hdr_data['tot_purch_price'] = tot_purch_price
 
-        inv_template.stream({'hdr': hdr_data, 'cols': cols, 'dtl': dtl_data}).dump(
+        return {'hdr': hdr_data, 'cols': cols, 'dtl': dtl_data}
+
+
+    def generate_html_invoice(self):
+        loader = FileSystemLoader('')
+        env = Environment(loader=loader)
+        inv_template = env.get_template('invoice_template.html')
+
+        inv_template.stream(self.get_invoice_data()).dump(
             'output/INV_{0}_{1}.html'.format(self.store, self.purch_dt)
         )
 

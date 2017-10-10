@@ -1,12 +1,87 @@
+from decimal import Decimal
+from os import path
 from flask import render_template, redirect, url_for, abort, flash, request,\
     current_app, make_response
 from flask_login import login_required, current_user
+from werkzeug.utils import secure_filename
 from . import main
-from .forms import EditProfileForm, EditProfileAdminForm, PostForm,\
-    CommentForm
+from .forms import FileUploadForm, EditProfileForm, EditProfileAdminForm, PostForm,\
+    CommentForm, InvoiceLineForm
 from .. import db
-from ..models import Permission, Role, User, Post, Comment
+from ..models import Permission, Role, User, File, Post, Comment
 from ..decorators import admin_required, permission_required
+
+from flask_wtf import FlaskForm
+from wtforms import FieldList, FormField, StringField
+
+@main.route('/upload', methods=['GET', 'POST'])
+def upload():
+    form = FileUploadForm()
+    if form.validate_on_submit():
+        uploaded_file_obj = form.purch_file.data
+        uploaed_filename = secure_filename(uploaded_file_obj.filename)
+        save_location = path.join(path.dirname(current_app.root_path), 'uploads', uploaed_filename)
+        uploaded_file_obj.save(save_location)
+        dm_file = File.load_file(save_location, uploaded_file_obj.filename, Decimal(form.default_disc_rate.data), Decimal(form.tax_rate.data), form.pmt_meth.data)
+        flash('The file (id: {0}) has been received!'.format(dm_file.file_id))
+        return redirect(url_for('.upload'))
+    return render_template('file_upload.html', form=form)
+
+
+@main.route('/invoice1/<file_id>', methods=['GET', 'POST'])
+def view_invoice1(file_id):
+    # logic for displaying the form
+    if request.method == 'GET':
+        file = File.query.get_or_404(file_id)
+        line_cnt = len(file.lines)
+        # Dynamical create a Form Class with the correct number of entries set to the number of lines in the file
+        class InvoiceForm(FlaskForm):
+            pass
+        # add a FieldList field to the Dynamic Form Class setting the min/max entries of the
+        # InvoiceLineForm subform to the count of the number of lines in the file
+        InvoiceForm.lines =  FieldList(
+            FormField(
+                InvoiceLineForm,label='Invoice Line'
+            ),
+            label='Invoice Lines', min_entries=line_cnt, max_entries=line_cnt
+        )
+        InvoiceForm.total_str_cvr_price = StringField('Total Store Cover Price', default=0)
+        InvoiceForm.total_str_item_disc = StringField('Total Store Item Discount', default=0)
+        InvoiceForm.total_str_disc_price = StringField('Total Store Dicounted Item Price', default=0)
+        InvoiceForm.total_str_item_tax = StringField('Total Store Item Tax', default=0)
+        InvoiceForm.total_str_tax_adj = StringField('Total Tax Adjustment', default=0)
+        InvoiceForm.total_str_tax_paid = StringField('Total Store Adjusted Tax', default=0)
+        InvoiceForm.total_purch_price = StringField('Total Purchase Price', default=0)
+        form = InvoiceForm()
+
+        # populate the values for each SubForm on the dynamic form class
+        for subform in form.lines:
+            for subfield in subform:
+                # don't set the value if the field type is CSRFTokenField
+                if subfield.type != 'CSRFTokenField':
+                    # by splitting the name of the subfield, we can get the index and subform field name
+                    # the contariner field name (1st item) is discarded
+                    unused_lines_field_name, line_index, field_name = subfield.name.split('-')
+                    val = getattr(file.lines[int(line_index)], field_name, None) or subfield.data
+                    subfield.data = val
+            subform.desc.data = (
+                '[{0}] {1} #{2} {3} ${4}'.format(
+                subform.seq.data,
+                subform.series.data,
+                subform.iss_full.data,
+                subform.cvr_dt.data,
+                subform.cover_price.data
+            ))
+        return render_template('invoice1.html', form=form, file_dbm=file)
+    # logic for processing the form data
+    else:
+        pass
+
+@main.route('/invoice/<file_id>')
+def view_invoice(file_id):
+    file = File.query.get_or_404(file_id)
+    # {'hdr': hdr_data, 'cols': cols, 'dtl': dtl_data}
+    return render_template('view_invoice.html', **file.get_invoice_data())
 
 
 @main.route('/', methods=['GET', 'POST'])

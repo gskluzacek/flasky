@@ -1,0 +1,33 @@
+table {
+    border-collapse: collapse;
+}
+tr {
+    font: 11px Verdana, Helvetica, Arial, sans-serif;
+}
+table.inv_hdr tr {
+    font: 14px Verdana, Helvetica, Arial, sans-serif;
+}
+tr.col_hdr td {
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    background-color: #bbbbbb;
+    font-weight: bold;
+}
+.lbl_txt {
+    font-weight: bold;
+}
+.rt_algn {
+    text-align: right;
+}
+tr.col_ftr td {
+    padding-top: 15px;
+}
+tr.col_dtl td {
+    border-bottom: 1.5px solid #cccccc;
+}
+.col_ttl {
+    border-top: 1px solid #000000;
+    border-bottom: double #000000;
+    font-weight: bold;
+}

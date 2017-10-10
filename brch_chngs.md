@@ -317,6 +317,7 @@ basic navigation to get to the screen.
 
 ## commits
 * f1a1c0876545e276ac463045218473bac9b56f37
+* 8d7cd47a2bfa8a6b2500de4b08f18c6abfd1a41a
 
 
 
@@ -400,6 +401,9 @@ encoding.
 most recent changes are listed first...
 
 ## pending
+
+
+## 8d7cd47a2bfa8a6b2500de4b08f18c6abfd1a41a
 
 **2017-10-01: Fix for `explicit_defaults_for_timestamp` MySQL Server Config setting**
 

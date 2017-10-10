@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Komic Logr - Edit Sales Receipt Information{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style>
+.total-fld {
+  width: 75px;
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+
+function calc_total(col) {
+  var sum = 0;
+  $("." + col).each(function(){
+    sum += +$(this).val();
+  });
+  $("#total_" + col).val(rnd_up(sum,2).toFixed(2))
+}
+
+// usage:
+//  decimalAdjust('round', value, exp);
+//  decimalAdjust('floor', value, exp);
+//  decimalAdjust('ceil',  value, exp);
+//
+//  10^0  = 1    - so use  0 to round to the nearest ones       digit --  1.4   ->  1    and  1.5   ->  2
+//  10^1  = 10   - so use  1 to round to the nearest tens       digit -- 12     -> 10    and 15     -> 20
+//  10^-1 = 0.1  - so use -1 to round to the nearest tenths     digit --  1.14  ->  1.1  and  1.15  ->  1.2
+//  10^-2 = 0.01 - 20 use -2 to round to the nearest hundredths digit --  1.014 ->  1.01 and  1.015 ->  1.02
+//
+// examples
+//  decimalAdjust('round', 1.005, -2) --> 1.01
+//  decimalAdjust('round', 1.004, -2) --> 1.00
+
+function decimalAdjust(type, value, exp) {
+    // If the exp is undefined or zero...
+    if (typeof exp === 'undefined' || +exp === 0) {
+      return Math[type](value);
+    }
+    value = +value;
+    exp = +exp;
+    // If the value is not a number or the exp is not an integer...
+    if (value === null || isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+      return NaN;
+    }
+    // If the value is negative...
+    if (value < 0) {
+      return -decimalAdjust(type, -value, exp);
+    }
+    // Shift
+    value = value.toString().split('e');
+    value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+    // Shift back
+    value = value.toString().split('e');
+    return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+  }
+
+// wrapper function for what we think of normal rounding
+// p is the number of digits after the decimal place
+//   p = 2 for 0.01
+//   p = 1 for 0.1
+//   p = 0 for 1.     that is 1.1 is rounded to 1 and 1.5 is rounded to 2
+//   p = -1 for 1x.   that is 11 is rounded to 10 and 16 is rounded to 20
+//   p = -2 for 1xx.  that is 149 is rounded to 100 and 150 is rounded to 200
+
+function rnd_up(n, p) {
+    return decimalAdjust('round', n, -p)
+}
+
+
+$(document).ready(function(){
+
+  // set focus and select text of the first input field
+  $("#lines-0-str_seq").focus().select();
+
+  // for all input fields, manage keyoard navigation of <RETURN>, <SHIFT><RETURN>, <UP-ARROW> & <DOWN-ARROW>
+  // each form field with have an id with a format similar to: lines-<row#>-<fld-name>,
+  // thus we can parse out the row # and field name with the split('-') function
+  $(".fld").keydown(function(e){
+    // use dictionary to look up prev/next columns when wrap around occurs for <RETURN> & <SHIFT><RETURN>
+    var next_column = {'str_seq': 'str_cvr_price', 'str_cvr_price': 'str_item_disc', 'str_item_disc': 'taxable_ind', 'taxable_ind': 'str_tax_adj', 'str_tax_adj': 'str_seq'};
+    var prev_column = {'str_seq': 'str_tax_adj', 'str_cvr_price': 'str_seq', 'str_item_disc': 'str_cvr_price', 'taxable_ind': 'str_item_disc', 'str_tax_adj': 'taxable_ind'};
+
+    // get the parts of the field's ID where the key down event occured
+    var fld_id_parts = $(this)[0].id.split('-');
+    var next_fld_id;
+    var max_fld_cnt = 29;
+    var min_fld_cnt = 0;
+
+    switch (e.which) {
+
+      case 13: // <RETURN>
+        if (! e.shiftKey) {  // <SHIFT> (shift key not pressed)
+          fld_id_parts[1] = parseInt(fld_id_parts[1], 10) + 1; // increment the row number
+          if (fld_id_parts[1] > max_fld_cnt) { // handle wrap around
+            fld_id_parts[1] = min_fld_cnt;
+            fld_id_parts[2] = next_column[fld_id_parts[2]];
+          }
+        } else { // with <SHIFT>
+          fld_id_parts[1] = parseInt(fld_id_parts[1], 10) - 1; // decrement the row number
+          if (fld_id_parts[1] < min_fld_cnt) { // handle wrap around
+            fld_id_parts[1] = max_fld_cnt;
+            fld_id_parts[2] = prev_column[fld_id_parts[2]];
+          }
+        }
+        next_fld_id = fld_id_parts.join('-'); // form the field name to `move` to
+        $('#' + next_fld_id).focus().select(); // set the focus and select the text within the newly moved to field
+        return false;
+
+      case 40: // <DOWN-ARROW>
+        fld_id_parts[1] = parseInt(fld_id_parts[1], 10) + 1; // increment the row number
+        if (fld_id_parts[1] > max_fld_cnt) { // handle wrap around
+          fld_id_parts[1] = min_fld_cnt;
+        }
+        next_fld_id = fld_id_parts.join('-'); // form the field name to `move` to
+        $('#' + next_fld_id).focus().select(); // set the focus and select the text within the newly moved to field
+        return false;
+
+      case 38: // <UP-ARROW>
+        fld_id_parts[1] = parseInt(fld_id_parts[1], 10) - 1; // decrement the row number
+        if (fld_id_parts[1] < min_fld_cnt) { // handle wrap around
+          fld_id_parts[1] = max_fld_cnt;
+        }
+        next_fld_id = fld_id_parts.join('-'); // form the field name to `move` to
+        $('#' + next_fld_id).focus().select(); // set the focus and select the text within the newly moved to field
+        return false;
+    }
+
+    return true;
+  });
+
+
+  // handle wrap around for <TAB> (shift key not pressed)
+  // if we are on the bottem rightmost field then move to the top leftmost field
+  $("#lines-29-str_tax_adj").keydown(function(e){
+    if(e.which == 9 && ! e.shiftKey) {
+      $("#lines-0-str_seq").focus().select();  // set the focus and select the text within the newly moved to field
+      return false;
+    }
+    return true;
+  });
+
+  // handle wrap around for <SHIFT> <TAB>
+  // if we are on the top leftmost field then move to the bottom rihgtmost field
+  $("#lines-0-str_seq").keydown(function(e){
+    if(e.which == 9 && e.shiftKey) {
+      $("#lines-29-str_tax_adj").focus().select();  // set the focus and select the text within the newly moved to field
+      return false;
+    }
+    return true;
+  });
+
+  // handle calculating fld3 when fld1 or fld2 are changed
+  $(".str_cvr_price,.str_item_disc,.taxable_ind,.str_tax_adj").change(function(){
+    var tax = 0.0;
+    var tax_paid = 0.0;
+    var tax_adj = 0.0;
+    var fld_id_parts = $(this)[0].id.split('-');
+    var line_num_id = '#' + fld_id_parts[0] + '-' + fld_id_parts[1] + '-';
+    var disc_price = parseFloat($(line_num_id + 'str_cvr_price').val()) - parseFloat($(line_num_id + 'str_item_disc').val());
+    $(line_num_id + 'str_disc_price').val(disc_price);
+    if ($(line_num_id + 'taxable_ind').val() == 'Y') {
+        tax = rnd_up(disc_price * 0.07, 2);
+        tax_adj = parseFloat($(line_num_id + 'str_tax_adj').val());
+        tax_paid = tax + tax_adj;
+    }
+    $(line_num_id + 'str_item_tax').val(tax);
+    $(line_num_id + 'str_tax_adj').val(tax_adj);
+    $(line_num_id + 'str_tax_paid').val(tax_paid);
+    $(line_num_id + 'purch_price').val((disc_price + tax_paid).toFixed(2));
+  });
+
+  $("#update-totals").click(function(){
+    calc_total("str_cvr_price");
+    calc_total("str_item_disc");
+    calc_total("str_disc_price");
+    calc_total("str_item_tax");
+    calc_total("str_tax_adj");
+    calc_total("str_tax_paid");
+    calc_total("purch_price");
+  });
+});
+</script>
+{% endblock %}
+
+{% block page_content %}
+<div class="file-lines-content">
+<p>purchase date: {{ file_dbm.purch_dt }}</p>
+<p>store: {{ file_dbm.store }}</p>
+<p>trans num:: {{ file_dbm.trans_num }}</p>
+
+<form action="" method="post" class="form-inline" role="form">
+
+    {{ form.hidden_tag() }}
+{% for subform in form.lines -%}
+    <div>
+    {%- for subfield in subform if bootstrap_is_hidden_field(subfield) %}
+        {{ subfield() }}
+    {%- endfor %}
+    {{ subform.desc(class="form-control", readonly=True, style="width: 350px;") }}
+    {{ subform.str_seq(class="form-control fld", style="width: 40px;") }}
+    {{ subform.str_cvr_price (class="form-control fld str_cvr_price", style="width: 60px;") }}
+    {{ subform.str_item_disc (class="form-control fld str_item_disc", style="width: 60px;") }}
+    {{ subform.str_disc_price (class="form-control str_disc_price", readonly=True, style="width: 60px;") }}
+    {{ subform.taxable_ind (class="form-control fld taxable_ind", style="width: 40px;") }}
+    {{ subform.str_item_tax (class="form-control str_item_tax", readonly=True, style="width: 60px;") }}
+    {{ subform.str_tax_adj (class="form-control fld str_tax_adj", style="width: 60px;") }}
+    {{ subform.str_tax_paid (class="form-control str_tax_paid", readonly=True, style="width: 60px;") }}
+    {{ subform.purch_price (class="form-control purch_price", readonly=True, style="width: 60px;") }}
+</div>
+{%- endfor -%}
+<dif>
+    {{ form.total_str_cvr_price(class="total-fld") }}
+    {{ form.total_str_item_disc(class="total-fld") }}
+    {{ form.total_str_disc_price(class="total-fld") }}
+    {{ form.total_str_item_tax(class="total-fld") }}
+    {{ form.total_str_tax_adj(class="total-fld") }}
+    {{ form.total_str_tax_paid(class="total-fld") }}
+    {{ form.total_purch_price(class="total-fld") }}
+</dif>
+</form>
+<button id="update-totals">Update Totals</button>
+</div>
+{% endblock %}
